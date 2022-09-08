@@ -1,0 +1,59 @@
+.progressCon {
+  width: 100%;
+  max-width: 800px;
+  display: flex;
+  justify-content: center;
+  height: 10%;
+  gap: calc(var(--gap) * 2);
+  font-size: 1.8rem;
+  padding: var(--padding);
+}
+
+.turns {
+  display: flex;
+  align-items: center;
+  width: 35%;
+  height: 100%;
+  justify-content: flex-start;
+}
+
+.progress {
+  display: flex;
+  align-items: center;
+  width: 65%;
+  height: 100%;
+  gap: var(--gap);
+}
+
+.barBorders {
+  width: 100%;
+  height: 100%;
+  border-style: solid;
+  border-width: 4px;
+  border-color: var(--secondary-dark) var(--secondary-medium)
+    var(--secondary-medium) var(--secondary-dark);
+  display: flex;
+  align-items: center;
+}
+
+.barBackground {
+  width: 100%;
+  height: 100%;
+  background-color: var(--accent);
+  transition: all 0.3s ease-in-out;
+}
+
+@media (max-width: 450px) {
+  .progressCon {
+    font-size: 1.7rem;
+    gap: var(--gap);
+  }
+
+  .turns {
+    width: 50%;
+  }
+
+  .progress {
+    width: 50%;
+  }
+}

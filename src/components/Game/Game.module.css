@@ -5,7 +5,7 @@
   flex-direction: column;
   justify-content: space-between;
   align-items: center;
-  padding: var(--padding);
+  padding: calc(var(--padding) * 2);
   gap: var(--gap);
 }
 
@@ -29,15 +29,10 @@
   justify-content: center;
   height: 80%;
 }
-.progressCon {
-  width: 100%;
-  display: flex;
-  justify-content: center;
-  height: 10%;
-}
 
 @media (max-width: 450px) {
   .newGameBtn {
     font-size: 1.8rem;
+    max-width: 200px;
   }
 }

@@ -7,10 +7,11 @@
 .metalBase {
   border-width: 8px;
   background-color: var(--card-bg);
+  color: var(--darkest);
 }
 
 .btn {
-  border-width: 4px;
+  border-width: 6px;
   background-color: var(--btn-bg);
   color: var(--darkest);
 }
@@ -24,4 +25,10 @@
 
 .btn:active {
   background-color: var(--btn-active);
+}
+
+@media (max-width: 450px) {
+  .metalBase {
+    border-width: 6px;
+  }
 }
