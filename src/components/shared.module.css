@@ -1,0 +1,27 @@
+.borders {
+  border-style: solid;
+  border-color: var(--secondary-light) var(--secondary-medium)
+    var(--secondary-medium) var(--secondary-light);
+}
+
+.metalBase {
+  border-width: 8px;
+  background-color: var(--card-bg);
+}
+
+.btn {
+  border-width: 4px;
+  background-color: var(--btn-bg);
+  color: var(--darkest);
+}
+
+.btn:hover {
+  cursor: pointer;
+  background-color: var(--btn-hover);
+  color: var(--accent);
+  text-shadow: 2px 2px 2px var(--darkest);
+}
+
+.btn:active {
+  background-color: var(--btn-active);
+}

@@ -1,0 +1,78 @@
+.titleScreen {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: calc(var(--padding) * 2);
+}
+
+.titleText {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  height: 50%;
+  width: 100%;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+.titleTextPrimary {
+  color: var(--accent);
+  text-shadow: 2px 2px 2px var(--darkest);
+  font-size: 11rem;
+  line-height: 100%;
+}
+
+.titleTextSecondary {
+  color: var(--accent);
+  text-shadow: 2px 2px 2px var(--darkest);
+  font-size: 2.3rem;
+}
+
+.titleBtn {
+  display: flex;
+  height: 50%;
+  width: 100%;
+  align-items: flex-start;
+  justify-content: center;
+}
+
+.startBtn {
+  max-width: 230px;
+  width: 90%;
+  height: 50px;
+  font-size: 2rem;
+}
+
+.startEffect {
+  animation-name: pressStart;
+  animation-iteration-count: infinite;
+  animation-timing-function: ease-in-out;
+  animation-duration: 1.5s;
+}
+
+@keyframes pressStart {
+  0% {
+    max-width: 230px;
+    height: 50px;
+    font-size: 2rem;
+  }
+  50% {
+    max-width: 260px;
+    height: 80px;
+    font-size: 3rem;
+  }
+  100% {
+    max-width: 230px;
+    height: 50px;
+    font-size: 2rem;
+  }
+}
+
+@media (max-width: 450px) {
+  .titleTextPrimary {
+    font-size: 5rem;
+  }
+}

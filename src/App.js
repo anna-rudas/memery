@@ -1,8 +1,15 @@
-import React from "react";
+import React, { useState } from "react";
 import { createRoot } from "react-dom/client";
+import TitleScreen from "./components/TitleScreen";
 
 function App() {
-  return <div className="wrapper">App</div>;
+  const [isPlaying, setIsPlaying] = useState(false);
+
+  return (
+    <div className="wrapper">
+      {!isPlaying && <TitleScreen setIsPlaying={setIsPlaying} />}
+    </div>
+  );
 }
 
 export default App;
