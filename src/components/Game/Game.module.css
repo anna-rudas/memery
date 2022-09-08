@@ -1,0 +1,43 @@
+.gameCon {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  padding: var(--padding);
+  gap: var(--gap);
+}
+
+.btnCon {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  height: 10%;
+}
+
+.newGameBtn {
+  max-width: 230px;
+  width: 90%;
+  height: 100%;
+  font-size: 2rem;
+}
+
+.cardGridCon {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  height: 80%;
+}
+.progressCon {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  height: 10%;
+}
+
+@media (max-width: 450px) {
+  .newGameBtn {
+    font-size: 1.8rem;
+  }
+}

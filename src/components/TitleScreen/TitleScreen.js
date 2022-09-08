@@ -10,7 +10,7 @@ function TitleScreen({ setIsPlaying }) {
         <h1 {...className(style.titleTextPrimary)}>Memery</h1>
         <h2 {...className(style.titleTextSecondary)}>A simple memory game</h2>
       </div>
-      <div {...className(style.titleBtn)}>
+      <div {...className(style.btnCon)}>
         <button
           onClick={() => {
             setIsPlaying(true);
