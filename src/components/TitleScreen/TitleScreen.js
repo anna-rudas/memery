@@ -3,7 +3,12 @@ import { className } from "../../helpers";
 import style from "./TitleScreen.module.css";
 import shared from "../../components/shared.module.css";
 
-function TitleScreen({ setIsPlaying }) {
+function TitleScreen({ setIsPlaying, handleNewGame }) {
+  const handleClick = () => {
+    setIsPlaying(true);
+    handleNewGame();
+  };
+
   return (
     <div {...className(style.titleScreen)}>
       <div {...className(style.titleText)}>
@@ -12,9 +17,7 @@ function TitleScreen({ setIsPlaying }) {
       </div>
       <div {...className(style.btnCon)}>
         <button
-          onClick={() => {
-            setIsPlaying(true);
-          }}
+          onClick={handleClick}
           {...className(
             shared.borders,
             shared.btn,

@@ -2,14 +2,27 @@ import React, { useState } from "react";
 import { createRoot } from "react-dom/client";
 import TitleScreen from "./components/TitleScreen";
 import Game from "./components/Game";
+import { generatePack, shuffleCards } from "./helpers";
 
 function App() {
   const [isPlaying, setIsPlaying] = useState(false);
+  const [cards, setCards] = useState([]);
+
+  const handleNewGame = () => {
+    const completeDeck = generatePack("large", "cryingCat");
+    shuffleCards(completeDeck);
+    setCards(completeDeck);
+  };
 
   return (
     <div className="wrapper">
-      {!isPlaying && <TitleScreen setIsPlaying={setIsPlaying} />}
-      {isPlaying && <Game />}
+      {!isPlaying && (
+        <TitleScreen
+          setIsPlaying={setIsPlaying}
+          handleNewGame={handleNewGame}
+        />
+      )}
+      {isPlaying && <Game cards={cards} handleNewGame={handleNewGame} />}
     </div>
   );
 }

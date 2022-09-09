@@ -1,0 +1,82 @@
+.cardGridCon {
+  display: grid;
+  height: fit-content;
+  width: fit-content;
+  max-height: 80%;
+  max-width: 90%;
+  padding: var(--padding);
+  gap: calc(var(--gap) * 2);
+  justify-content: center;
+  align-items: center;
+}
+
+.mediumGrid {
+  grid-template-columns: repeat(6, minmax(0, 1fr));
+  grid-template-rows: repeat(4, minmax(0, 1fr));
+}
+
+.smallGrid {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  grid-template-rows: repeat(4, minmax(0, 1fr));
+}
+
+.largeGrid {
+  grid-template-columns: repeat(10, minmax(0, 1fr));
+  grid-template-rows: repeat(4, minmax(0, 1fr));
+}
+
+.card {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: var(--border-radius);
+}
+
+.cardFace {
+  height: auto;
+  width: 100%;
+  max-height: 110px;
+  max-width: 110px;
+  border-radius: var(--border-radius);
+}
+
+@media (max-width: 700px) {
+  .largeGrid {
+    grid-template-columns: repeat(8, minmax(0, 1fr));
+    grid-template-rows: repeat(5, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 500px) {
+  .cardGridCon {
+    gap: var(--gap);
+    max-width: 70%;
+  }
+
+  .mediumGrid {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    grid-template-rows: repeat(6, minmax(0, 1fr));
+  }
+
+  .largeGrid {
+    grid-template-columns: repeat(5, minmax(0, 1fr));
+    grid-template-rows: repeat(8, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 380px) {
+  .cardGridCon {
+    gap: var(--gap);
+    max-width: 90%;
+  }
+
+  .mediumGrid {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    grid-template-rows: repeat(6, minmax(0, 1fr));
+  }
+
+  .largeGrid {
+    grid-template-columns: repeat(5, minmax(0, 1fr));
+    grid-template-rows: repeat(8, minmax(0, 1fr));
+  }
+}
