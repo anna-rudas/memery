@@ -9,7 +9,7 @@ function App() {
   const [cards, setCards] = useState([]);
 
   const handleNewGame = () => {
-    const completeDeck = generatePack("large", "cryingCat");
+    const completeDeck = generatePack("small", "cryingCat");
     shuffleCards(completeDeck);
     setCards(completeDeck);
   };
@@ -22,7 +22,9 @@ function App() {
           handleNewGame={handleNewGame}
         />
       )}
-      {isPlaying && <Game cards={cards} handleNewGame={handleNewGame} />}
+      {isPlaying && (
+        <Game cards={cards} setCards={setCards} handleNewGame={handleNewGame} />
+      )}
     </div>
   );
 }

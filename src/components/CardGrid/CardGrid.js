@@ -4,7 +4,7 @@ import style from "./CardGrid.module.css";
 import shared from "../../components/shared.module.css";
 import Card from "./Card";
 
-function CardGrid({ cards, packSize }) {
+function CardGrid({ cards, packSize, flipCards, firstFlip, secondFlip }) {
   return (
     <div
       {...className(
@@ -15,7 +15,19 @@ function CardGrid({ cards, packSize }) {
       )}
     >
       {cards.map((current) => {
-        return <Card key={current.id} card={current} />;
+        return (
+          <Card
+            key={current.id}
+            card={current}
+            flipCards={flipCards}
+            flipped={
+              current.id === firstFlip?.id ||
+              current.id === secondFlip?.id ||
+              current.matched
+            }
+            disabled={secondFlip || current.matched}
+          />
+        );
       })}
     </div>
   );
