@@ -3,7 +3,7 @@ import { className } from "../../helpers";
 import style from "./ProgressBar.module.css";
 import shared from "../../components/shared.module.css";
 
-function ProgressBar() {
+function ProgressBar({ turns, cards, countMatched, calcPercentage }) {
   const [matches, setMatches] = useState(
     window.matchMedia("(min-width: 451px)").matches
   );
@@ -16,13 +16,16 @@ function ProgressBar() {
 
   return (
     <div {...className(style.progressCon, shared.borders, shared.metalBase)}>
-      <div {...className(style.turns)}>Turns: 999</div>
+      <div {...className(style.turns)}>Turns: {turns}</div>
       <div {...className(style.progress)}>
         {matches && <span>Progress:</span>}
         <div {...className(style.barBorders)}>
-          <div {...className(style.barBackground)}></div>
+          <div
+            {...className(style.barBackground)}
+            style={{ width: calcPercentage(cards, countMatched) + "%" }}
+          ></div>
         </div>
-        <span>100%</span>
+        <span>{calcPercentage(cards, countMatched)}%</span>
       </div>
     </div>
   );

@@ -12,7 +12,11 @@ function Card({ card, disabled, flipCards, flipped }) {
 
   return (
     <div {...className(style.card, flipped && style.cardFlipped)}>
-      <img {...className(style.cardFace)} src={card.src} alt="" />
+      <img
+        {...className(style.cardFace, card.matched && style.matchedEffect)}
+        src={card.src}
+        alt=""
+      />
       <button {...className(style.btn)} onClick={handleClick}>
         <img {...className(style.cardBack)} src={cover} alt="" />
       </button>

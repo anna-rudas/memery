@@ -1,16 +1,23 @@
-import React, { useState, useEffect } from "react";
-import { className } from "../../helpers";
+import React, { useEffect } from "react";
+import { className, calcPercentage } from "../../helpers";
 import style from "./Game.module.css";
 import shared from "../../components/shared.module.css";
 import ProgressBar from "../ProgressBar/ProgressBar";
 import CardGrid from "../CardGrid/CardGrid";
 
-function Game({ cards, setCards, handleNewGame }) {
-  const [firstFlip, setFirstFlip] = useState(null);
-  const [secondFlip, setSecondFlip] = useState(null);
-  const [countMatched, setCountMatched] = useState(0);
-  const [turns, setTurns] = useState(0);
-
+function Game({
+  cards,
+  setCards,
+  handleNewGame,
+  turns,
+  setTurns,
+  firstFlip,
+  setFirstFlip,
+  secondFlip,
+  setSecondFlip,
+  countMatched,
+  setCountMatched,
+}) {
   const flipCards = (card) => {
     if (!firstFlip) {
       setFirstFlip(card);
@@ -68,7 +75,12 @@ function Game({ cards, setCards, handleNewGame }) {
         firstFlip={firstFlip}
         secondFlip={secondFlip}
       />
-      <ProgressBar />
+      <ProgressBar
+        turns={turns}
+        cards={cards}
+        countMatched={countMatched}
+        calcPercentage={calcPercentage}
+      />
     </div>
   );
 }
