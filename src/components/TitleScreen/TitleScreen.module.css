@@ -40,7 +40,7 @@
 }
 
 .startBtn {
-  max-width: 230px;
+  max-width: var(--btn-width);
   width: 90%;
   height: 50px;
   font-size: 2rem;

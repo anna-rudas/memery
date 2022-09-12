@@ -17,8 +17,8 @@
 }
 
 .newGameBtn {
-  max-width: 230px;
-  max-height: 70px;
+  max-width: var(--btn-width);
+  max-height: var(--btn-height);
   width: 90%;
   height: 100%;
   font-size: 2rem;

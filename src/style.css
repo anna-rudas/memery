@@ -19,7 +19,7 @@ body,
   --btn-bg: #c7c5c5;
   --btn-hover: #acaaaa;
   --btn-active: #979494;
-  --settings-con-bg: rgba(95, 95, 97, 0.5);
+  --modal-bg: rgba(95, 95, 97, 0.5);
   --darkest: #000;
   --lightest: #fff;
   --accent: #eaac02;
@@ -30,6 +30,8 @@ body,
   --margin: 10px;
   --padding: 5px;
   --gap: 3px;
+  --btn-width: 230px;
+  --btn-height: 70px;
 }
 
 .wrapper {

@@ -1,8 +1,9 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { createRoot } from "react-dom/client";
+import { generatePack, shuffleCards } from "./helpers";
 import TitleScreen from "./components/TitleScreen";
 import Game from "./components/Game";
-import { generatePack, shuffleCards } from "./helpers";
+import GameOver from "./components/GameOver/GameOver";
 
 function App() {
   const [isPlaying, setIsPlaying] = useState(false);
@@ -11,6 +12,7 @@ function App() {
   const [firstFlip, setFirstFlip] = useState(null);
   const [secondFlip, setSecondFlip] = useState(null);
   const [countMatched, setCountMatched] = useState(0);
+  const [gameOver, setGameOver] = useState(false);
 
   const resetGame = () => {
     setTurns(0);
@@ -18,6 +20,7 @@ function App() {
     setSecondFlip(null);
     setIsPlaying(true);
     setCountMatched(0);
+    setGameOver(false);
   };
 
   const handleNewGame = () => {
@@ -26,6 +29,14 @@ function App() {
     shuffleCards(completeDeck);
     setCards(completeDeck);
   };
+
+  useEffect(() => {
+    if (countMatched !== 0 && countMatched === cards.length / 2) {
+      setTimeout(() => {
+        setGameOver(true);
+      }, 700);
+    }
+  }, [countMatched, cards]);
 
   return (
     <div className="wrapper">
@@ -45,6 +56,7 @@ function App() {
           setCountMatched={setCountMatched}
         />
       )}
+      {gameOver && <GameOver handleNewGame={handleNewGame} />}
     </div>
   );
 }

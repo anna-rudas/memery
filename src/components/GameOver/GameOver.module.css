@@ -1,0 +1,60 @@
+.gameOverCon {
+  position: fixed;
+  inset: 0;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 3;
+  animation-name: darkening;
+  animation-duration: 0.8s;
+  animation-iteration-count: 1;
+  animation-timing-function: ease-in-out;
+  animation-fill-mode: forwards;
+}
+
+@keyframes darkening {
+  0% {
+    background-color: transparent;
+  }
+  100% {
+    background-color: var(--modal-bg);
+  }
+}
+
+.gameOverText {
+  position: absolute;
+  inset: 0;
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: calc(var(--padding) * 4);
+  gap: calc(var(--gap) * 5);
+  width: 90%;
+  max-width: 300px;
+  height: 90%;
+  max-height: 190px;
+  font-size: 2rem;
+  animation-name: slideDown;
+  animation-duration: 0.8s;
+  animation-iteration-count: 1;
+  animation-timing-function: ease-in-out;
+  animation-fill-mode: forwards;
+}
+
+@keyframes slideDown {
+  0% {
+    top: -120vh;
+  }
+  100% {
+  }
+}
+
+.playBtn {
+  max-width: var(--btn-width);
+  width: 90%;
+  height: var(--btn-height);
+  font-size: 2rem;
+}
