@@ -25,7 +25,9 @@ function ProgressBar({ turns, cards, countMatched, calcPercentage }) {
             style={{ width: calcPercentage(cards, countMatched) + "%" }}
           ></div>
         </div>
-        <span>{calcPercentage(cards, countMatched)}%</span>
+        <span {...className(style.percentage)}>
+          {calcPercentage(cards, countMatched)}%
+        </span>
       </div>
     </div>
   );

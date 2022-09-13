@@ -17,7 +17,10 @@ function Card({ card, disabled, flipCards, flipped }) {
         src={card.src}
         alt=""
       />
-      <button {...className(style.btn)} onClick={handleClick}>
+      <button
+        {...className(style.btn, flipped && style.btnFlipped)}
+        onClick={handleClick}
+      >
         <img {...className(style.cardBack)} src={cover} alt="" />
       </button>
     </div>

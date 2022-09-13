@@ -2,7 +2,7 @@
   display: grid;
   height: fit-content;
   width: fit-content;
-  max-height: 80%;
+  max-height: 83%;
   max-width: 90%;
   padding: var(--padding);
   gap: calc(var(--gap) * 2);
@@ -38,8 +38,8 @@
 .cardFace {
   height: auto;
   width: 100%;
-  max-height: 110px;
-  max-width: 110px;
+  max-height: 100px;
+  max-width: 100px;
   backface-visibility: hidden;
   border-radius: var(--border-radius);
   transform: rotateY(180deg);
@@ -76,6 +76,9 @@
 
 .cardFlipped {
   transform: rotateY(180deg);
+}
+
+.btnFlipped {
   cursor: default !important;
 }
 
@@ -100,6 +103,10 @@
 }
 
 @media (max-width: 700px) {
+  .cardGridCon {
+    gap: var(--gap);
+  }
+
   .largeGrid {
     grid-template-columns: repeat(8, minmax(0, 1fr));
     grid-template-rows: repeat(5, minmax(0, 1fr));
@@ -108,8 +115,7 @@
 
 @media (max-width: 500px) {
   .cardGridCon {
-    gap: var(--gap);
-    max-width: 70%;
+    max-width: 60%;
   }
 
   .mediumGrid {
@@ -123,9 +129,14 @@
   }
 }
 
+@media (max-width: 420px) {
+  .cardGridCon {
+    max-width: 80%;
+  }
+}
+
 @media (max-width: 380px) {
   .cardGridCon {
-    gap: var(--gap);
     max-width: 90%;
   }
 

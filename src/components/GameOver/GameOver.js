@@ -3,14 +3,21 @@ import { className } from "../../helpers";
 import style from "./GameOver.module.css";
 import shared from "../../components/shared.module.css";
 
-function GameOver({ handleNewGame }) {
+function GameOver({ handleBtnClick }) {
   const handleClick = () => {
-    handleNewGame();
+    handleBtnClick();
   };
 
   return (
-    <div {...className(style.gameOverCon)}>
-      <div {...className(style.gameOverText, shared.borders, shared.metalBase)}>
+    <div {...className(shared.modalCon)}>
+      <div
+        {...className(
+          style.gameOverCon,
+          shared.slideDown,
+          shared.borders,
+          shared.metalBase
+        )}
+      >
         <span> Game over</span>
         <button
           onClick={handleClick}

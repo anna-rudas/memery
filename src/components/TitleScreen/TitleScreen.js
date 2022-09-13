@@ -3,9 +3,9 @@ import { className } from "../../helpers";
 import style from "./TitleScreen.module.css";
 import shared from "../../components/shared.module.css";
 
-function TitleScreen({ handleNewGame }) {
+function TitleScreen({ handleBtnClick }) {
   const handleClick = () => {
-    handleNewGame();
+    handleBtnClick();
   };
 
   return (

@@ -13,3 +13,33 @@ export const packs = {
   muscats: muscatsPack,
   bugsWithNames: bugsWithNamesPack,
 };
+
+export const sizeOptions = [
+  {
+    value: "small",
+    text: "Small",
+  },
+  {
+    value: "medium",
+    text: "Medium",
+  },
+  {
+    value: "large",
+    text: "Large",
+  },
+];
+
+export const typeOptions = [
+  {
+    value: "muscats",
+    text: "Muscats ",
+  },
+  {
+    value: "cryingCat",
+    text: "Crying cats",
+  },
+  {
+    value: "bugsWithNames",
+    text: "Bugs with names",
+  },
+];

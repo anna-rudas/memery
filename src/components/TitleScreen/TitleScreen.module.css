@@ -55,7 +55,7 @@
 
 @keyframes pressStart {
   0% {
-    max-width: 230px;
+    max-width: var(--btn-width);
     height: 50px;
     font-size: 2rem;
   }
@@ -65,7 +65,7 @@
     font-size: 3rem;
   }
   100% {
-    max-width: 230px;
+    max-width: var(--btn-width);
     height: 50px;
     font-size: 2rem;
   }

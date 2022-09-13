@@ -4,6 +4,7 @@ import { generatePack, shuffleCards } from "./helpers";
 import TitleScreen from "./components/TitleScreen";
 import Game from "./components/Game";
 import GameOver from "./components/GameOver/GameOver";
+import Settings from "./components/Settings/Settings";
 
 function App() {
   const [isPlaying, setIsPlaying] = useState(false);
@@ -12,7 +13,10 @@ function App() {
   const [firstFlip, setFirstFlip] = useState(null);
   const [secondFlip, setSecondFlip] = useState(null);
   const [countMatched, setCountMatched] = useState(0);
-  const [gameOver, setGameOver] = useState(false);
+  const [isGameOver, setIsGameOver] = useState(false);
+  const [packSize, setPackSize] = useState("medium");
+  const [packType, setPackType] = useState("cryingCat");
+  const [isSettingsOpen, setIsSettingsOpen] = useState(false);
 
   const resetGame = () => {
     setTurns(0);
@@ -20,12 +24,13 @@ function App() {
     setSecondFlip(null);
     setIsPlaying(true);
     setCountMatched(0);
-    setGameOver(false);
+    setIsGameOver(false);
   };
 
   const handleNewGame = () => {
     resetGame();
-    const completeDeck = generatePack("small", "cryingCat");
+    setIsSettingsOpen(false);
+    const completeDeck = generatePack(packSize, packType);
     shuffleCards(completeDeck);
     setCards(completeDeck);
   };
@@ -33,19 +38,23 @@ function App() {
   useEffect(() => {
     if (countMatched !== 0 && countMatched === cards.length / 2) {
       setTimeout(() => {
-        setGameOver(true);
+        setIsGameOver(true);
       }, 700);
     }
   }, [countMatched, cards]);
 
+  const openSettings = () => {
+    setIsSettingsOpen(true);
+  };
+
   return (
     <div className="wrapper">
-      {!isPlaying && <TitleScreen handleNewGame={handleNewGame} />}
+      {!isPlaying && <TitleScreen handleBtnClick={openSettings} />}
       {isPlaying && (
         <Game
           cards={cards}
           setCards={setCards}
-          handleNewGame={handleNewGame}
+          handleBtnClick={openSettings}
           turns={turns}
           setTurns={setTurns}
           firstFlip={firstFlip}
@@ -54,9 +63,20 @@ function App() {
           setSecondFlip={setSecondFlip}
           countMatched={countMatched}
           setCountMatched={setCountMatched}
+          packSize={packSize}
+          isSettingsOpen={isSettingsOpen}
         />
       )}
-      {gameOver && <GameOver handleNewGame={handleNewGame} />}
+      {isGameOver && <GameOver handleBtnClick={openSettings} />}
+      {isSettingsOpen && (
+        <Settings
+          handleNewGame={handleNewGame}
+          packSize={packSize}
+          setPackSize={setPackSize}
+          packType={packType}
+          setPackType={setPackType}
+        />
+      )}
     </div>
   );
 }

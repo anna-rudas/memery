@@ -44,7 +44,7 @@ body,
   user-select: none;
 }
 
-@media (max-width: 420px) {
+@media (max-width: 500px) {
   :root {
     --border-radius: 5px;
   }

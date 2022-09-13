@@ -8,7 +8,7 @@ import CardGrid from "../CardGrid/CardGrid";
 function Game({
   cards,
   setCards,
-  handleNewGame,
+  handleBtnClick,
   turns,
   setTurns,
   firstFlip,
@@ -17,6 +17,8 @@ function Game({
   setSecondFlip,
   countMatched,
   setCountMatched,
+  packSize,
+  isSettingsOpen,
 }) {
   const flipCards = (card) => {
     if (!firstFlip) {
@@ -62,19 +64,21 @@ function Game({
     <div {...className(style.gameCon)}>
       <div {...className(style.btnCon)}>
         <button
-          onClick={handleNewGame}
+          onClick={handleBtnClick}
           {...className(shared.borders, shared.btn, style.newGameBtn)}
         >
           Start new game
         </button>
       </div>
-      <CardGrid
-        cards={cards}
-        packSize="small"
-        flipCards={flipCards}
-        firstFlip={firstFlip}
-        secondFlip={secondFlip}
-      />
+      {!isSettingsOpen && (
+        <CardGrid
+          cards={cards}
+          packSize={packSize}
+          flipCards={flipCards}
+          firstFlip={firstFlip}
+          secondFlip={secondFlip}
+        />
+      )}
       <ProgressBar
         turns={turns}
         cards={cards}
