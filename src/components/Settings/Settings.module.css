@@ -14,6 +14,7 @@
   gap: calc(var(--gap) * 3);
   padding: calc(var(--padding) * 2);
   justify-content: space-around;
+  z-index: 5;
 }
 
 .settingsText {
@@ -91,11 +92,6 @@
   background-color: var(--btn-hover);
 }
 
-.cardsIll {
-  min-height: 80px;
-  height: 30%;
-}
-
 .btnCon {
   width: 100%;
   display: flex;
@@ -143,11 +139,6 @@
 
   .labelText {
     padding: 2px;
-  }
-
-  .cardsIll {
-    min-height: 40px;
-    height: 10%;
   }
 
   .btnCon {

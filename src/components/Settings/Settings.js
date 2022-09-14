@@ -1,9 +1,10 @@
 import React from "react";
-import { className } from "../../helpers";
+import { className, generatePreviewPack } from "../../helpers";
 import style from "./Settings.module.css";
 import shared from "../../components/shared.module.css";
 import Options from "./Options";
 import { sizeOptions, typeOptions } from "../../constants";
+import PackPreview from "../PackPreview";
 
 function Settings({
   packSize,
@@ -20,6 +21,8 @@ function Settings({
     setPackType(event.target.value);
   };
 
+  const previewPack = generatePreviewPack(3, packType);
+
   return (
     <div {...className(shared.modalCon)}>
       <div
@@ -27,7 +30,8 @@ function Settings({
           style.settingsCon,
           shared.slideDown,
           shared.borders,
-          shared.metalBase
+          shared.metalBase,
+          shared.shadow
         )}
       >
         <span {...className(style.settingsText)}>Settings</span>
@@ -45,7 +49,8 @@ function Settings({
           name="selecttype"
           sizeOrType={packType}
         />
-        <div {...className(style.cardsIll)}>3 cards</div>
+        <PackPreview pack={previewPack} />
+
         <div {...className(style.btnCon)}>
           <button
             onClick={handleNewGame}

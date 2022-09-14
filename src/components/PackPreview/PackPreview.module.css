@@ -1,0 +1,54 @@
+.previewCon {
+  min-height: 80px;
+  max-width: 230px;
+  height: 30%;
+  width: 50%;
+  position: relative;
+  margin: var(--margin);
+}
+
+.previewImg {
+  height: 100%;
+  width: auto;
+  border-radius: var(--border-radius);
+  position: absolute;
+  animation-name: slowAppear;
+  animation-duration: 0.5s;
+  animation-iteration-count: 1;
+  animation-timing-function: ease-in-out;
+  animation-fill-mode: forwards;
+}
+
+@keyframes slowAppear {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+.previewImg:nth-child(1) {
+  left: 0;
+  animation-delay: -250ms;
+}
+
+.previewImg:nth-child(2) {
+  inset: 0;
+  margin: auto;
+  animation-delay: -125ms;
+}
+
+.previewImg:nth-child(3) {
+  right: 0;
+  animation-delay: 0ms;
+}
+
+@media (max-width: 600px) {
+  .previewCon {
+    min-height: 40px;
+    max-width: 110px;
+    height: 10%;
+    margin: 0;
+  }
+}

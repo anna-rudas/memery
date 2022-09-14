@@ -15,7 +15,8 @@ function GameOver({ handleBtnClick }) {
           style.gameOverCon,
           shared.slideDown,
           shared.borders,
-          shared.metalBase
+          shared.metalBase,
+          shared.shadow
         )}
       >
         <span> Game over</span>

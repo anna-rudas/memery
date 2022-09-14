@@ -3,8 +3,8 @@ import { createRoot } from "react-dom/client";
 import { generatePack, shuffleCards } from "./helpers";
 import TitleScreen from "./components/TitleScreen";
 import Game from "./components/Game";
-import GameOver from "./components/GameOver/GameOver";
-import Settings from "./components/Settings/Settings";
+import GameOver from "./components/GameOver";
+import Settings from "./components/Settings";
 
 function App() {
   const [isPlaying, setIsPlaying] = useState(false);
@@ -39,7 +39,7 @@ function App() {
     if (countMatched !== 0 && countMatched === cards.length / 2) {
       setTimeout(() => {
         setIsGameOver(true);
-      }, 700);
+      }, 500);
     }
   }, [countMatched, cards]);
 
