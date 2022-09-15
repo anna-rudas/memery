@@ -79,11 +79,6 @@
   cursor: pointer;
 }
 
-.labelText:hover {
-  color: var(--accent);
-  text-shadow: 2px 2px 2px var(--darkest);
-}
-
 .radioInput:checked + .labelText {
   border-style: solid;
   border-width: 4px;
@@ -147,5 +142,12 @@
 
   .playBtn {
     font-size: 1.7rem;
+  }
+}
+
+@media (hover: hover) {
+  .labelText:hover {
+    color: var(--accent);
+    text-shadow: 2px 2px 2px var(--darkest);
   }
 }

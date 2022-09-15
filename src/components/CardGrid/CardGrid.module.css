@@ -58,20 +58,12 @@
   transition: all 0.3s ease-in-out;
 }
 
-.btn:hover {
-  cursor: pointer;
-}
-
 .cardBack {
   width: 100%;
   height: 100%;
   backface-visibility: hidden;
   border-radius: var(--border-radius);
   transition: all 0.1s ease-in-out;
-}
-
-.cardBack:hover {
-  transform: rotateZ(2deg);
 }
 
 .cardFlipped {
@@ -148,5 +140,15 @@
   .largeGrid {
     grid-template-columns: repeat(5, minmax(0, 1fr));
     grid-template-rows: repeat(8, minmax(0, 1fr));
+  }
+}
+
+@media (hover: hover) {
+  .cardBack:hover {
+    transform: rotateZ(2deg);
+  }
+
+  .btn:hover {
+    cursor: pointer;
   }
 }

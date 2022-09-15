@@ -16,13 +16,6 @@
   color: var(--darkest);
 }
 
-.btn:hover {
-  cursor: pointer;
-  background-color: var(--btn-hover);
-  color: var(--accent);
-  text-shadow: 2px 2px 2px var(--darkest);
-}
-
 .btn:active {
   background-color: var(--btn-active);
 }
@@ -73,5 +66,14 @@
 @media (max-width: 450px) {
   .metalBase {
     border-width: 6px;
+  }
+}
+
+@media (hover: hover) {
+  .btn:hover {
+    cursor: pointer;
+    background-color: var(--btn-hover);
+    color: var(--accent);
+    text-shadow: 2px 2px 2px var(--darkest);
   }
 }
