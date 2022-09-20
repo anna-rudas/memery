@@ -1,5 +1,5 @@
 import React from "react";
-import style from "./CardGrid.module.css";
+import * as style from "./CardGrid.module.css";
 import cover from "../../images/cover.jpg";
 import { className } from "../../helpers";
 

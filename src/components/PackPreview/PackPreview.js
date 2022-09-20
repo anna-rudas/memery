@@ -1,7 +1,7 @@
 import React from "react";
 import { className } from "../../helpers";
-import style from "./PackPreview.module.css";
-import shared from "../../components/shared.module.css";
+import * as style from "./PackPreview.module.css";
+import * as shared from "../../components/shared.module.css";
 
 function PackPreview({ pack }) {
   return (

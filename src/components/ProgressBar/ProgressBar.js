@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { className } from "../../helpers";
-import style from "./ProgressBar.module.css";
-import shared from "../../components/shared.module.css";
+import * as style from "./ProgressBar.module.css";
+import * as shared from "../../components/shared.module.css";
 
 function ProgressBar({ turns, cards, countMatched, calcPercentage }) {
   const [matches, setMatches] = useState(

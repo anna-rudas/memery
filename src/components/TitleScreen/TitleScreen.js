@@ -1,7 +1,7 @@
 import React from "react";
 import { className } from "../../helpers";
-import style from "./TitleScreen.module.css";
-import shared from "../../components/shared.module.css";
+import * as style from "./TitleScreen.module.css";
+import * as shared from "../../components/shared.module.css";
 
 function TitleScreen({ handleBtnClick }) {
   const handleClick = () => {

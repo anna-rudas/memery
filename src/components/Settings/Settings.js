@@ -1,7 +1,7 @@
 import React from "react";
 import { className, generatePreviewPack } from "../../helpers";
-import style from "./Settings.module.css";
-import shared from "../../components/shared.module.css";
+import * as style from "./Settings.module.css";
+import * as shared from "../../components/shared.module.css";
 import Options from "./Options";
 import { sizeOptions, typeOptions } from "../../constants";
 import PackPreview from "../PackPreview";
