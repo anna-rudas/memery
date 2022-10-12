@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useCallback } from "react";
 import { className, calcPercentage } from "../../helpers";
 import * as style from "./Game.module.css";
 import * as shared from "../../components/shared.module.css";
@@ -31,13 +31,13 @@ function Game({
     }
   };
 
-  const resetFlips = () => {
+  const resetFlips = useCallback(() => {
     setFirstFlip(null);
     setSecondFlip(null);
     setTurns(turns + 1);
-  };
+  }, [setFirstFlip, setSecondFlip, setTurns, turns]);
 
-  const compareCards = () => {
+  const compareCards = useCallback(() => {
     if (secondFlip) {
       if (firstFlip.src === secondFlip.src) {
         setCountMatched(countMatched + 1);
@@ -52,13 +52,21 @@ function Game({
       }
       resetFlips();
     }
-  };
+  }, [
+    cards,
+    countMatched,
+    firstFlip,
+    resetFlips,
+    secondFlip,
+    setCards,
+    setCountMatched,
+  ]);
 
   useEffect(() => {
     setTimeout(() => {
       compareCards();
     }, 700);
-  }, [secondFlip]); //eslint-disable-line react-hooks/exhaustive-deps
+  }, [secondFlip, compareCards]);
 
   return (
     <div {...className(style.gameCon)}>
