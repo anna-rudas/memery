@@ -1,7 +1,7 @@
 import React from "react";
-import { className } from "../../helpers";
+import { className } from "../../utilities/helpers";
 import * as style from "./GameOver.module.css";
-import * as shared from "../../components/shared.module.css";
+import * as shared from "../../assets/styles/shared.module.css";
 
 function GameOver({ handleBtnClick }) {
   const handleClick = () => {

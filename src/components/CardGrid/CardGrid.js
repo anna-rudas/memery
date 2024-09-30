@@ -1,7 +1,7 @@
 import React from "react";
-import { className } from "../../helpers";
+import { className } from "../../utilities/helpers";
 import * as style from "./CardGrid.module.css";
-import * as shared from "../../components/shared.module.css";
+import * as shared from "../../assets/styles/shared.module.css";
 import Card from "./Card";
 
 function CardGrid({ cards, packSize, flipCards, firstFlip, secondFlip }) {

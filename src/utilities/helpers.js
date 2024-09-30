@@ -1,4 +1,4 @@
-import { sizes, packs } from "./constants";
+import { sizes, packs } from "../data/constants";
 import { v4 as uuidv4 } from "uuid";
 
 export const className = (...classNames) => {

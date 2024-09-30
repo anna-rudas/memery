@@ -1,9 +1,9 @@
 import React from "react";
-import { className, generatePreviewPack } from "../../helpers";
+import { className, generatePreviewPack } from "../../utilities/helpers";
 import * as style from "./Settings.module.css";
-import * as shared from "../../components/shared.module.css";
+import * as shared from "../../assets/styles/shared.module.css";
 import Options from "./Options";
-import { sizeOptions, typeOptions } from "../../constants";
+import { sizeOptions, typeOptions } from "../../data/constants";
 import PackPreview from "../PackPreview";
 
 function Settings({

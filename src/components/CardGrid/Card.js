@@ -1,7 +1,7 @@
 import React from "react";
 import * as style from "./CardGrid.module.css";
-import cover from "../../images/cover.jpg";
-import { className } from "../../helpers";
+import cover from "../../assets/images/cover.jpg";
+import { className } from "../../utilities/helpers";
 
 function Card({ card, disabled, flipCards, flipped }) {
   const handleClick = () => {

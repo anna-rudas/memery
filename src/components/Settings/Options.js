@@ -1,5 +1,5 @@
 import React from "react";
-import { className } from "../../helpers";
+import { className } from "../../utilities/helpers";
 import * as style from "./Settings.module.css";
 
 function Options({

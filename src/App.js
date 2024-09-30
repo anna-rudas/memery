@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { createRoot } from "react-dom/client";
-import { generatePack, shuffleCards } from "./helpers";
+import { generatePack, shuffleCards } from "./utilities/helpers";
 import TitleScreen from "./components/TitleScreen";
 import Game from "./components/Game";
 import GameOver from "./components/GameOver";
