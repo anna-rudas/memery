@@ -1,10 +1,10 @@
 import React, { useState, useEffect } from "react";
 import { createRoot } from "react-dom/client";
 import { generatePack, shuffleCards } from "./utilities/helpers";
-import TitleScreen from "./components/TitleScreen";
-import GameContent from "./components/GameContent";
-import GameOverModal from "./components/GameOverModal";
-import SettingsModal from "./components/SettingsModal";
+import TitleScreen from "./components/features/TitleScreen";
+import GameContent from "./components/features/GameContent";
+import GameOverModal from "./components/modals/GameOverModal";
+import SettingsModal from "./components/modals/SettingsModal";
 import FontFaceObserver from "fontfaceobserver";
 
 const primaryFontObserver = new FontFaceObserver("VT323");

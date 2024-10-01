@@ -1,7 +1,7 @@
 import React from "react";
 import * as style from "./PlayingCard.module.css";
-import cover from "../../assets/images/cover.jpg";
-import { className } from "../../utilities/helpers";
+import cover from "../../../assets/images/cover.jpg";
+import { className } from "../../../utilities/helpers";
 
 function Card({ card, disabled, flipCards, flipped }) {
   const handleClick = () => {

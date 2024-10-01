@@ -1,8 +1,8 @@
 import React from "react";
-import { className } from "../../utilities/helpers";
+import { className } from "../../../utilities/helpers";
 import * as style from "./CardsGrid.module.css";
-import * as shared from "../../assets/styles/shared.module.css";
-import PlayingCard from "../PlayingCard";
+import * as shared from "../../../assets/styles/shared.module.css";
+import PlayingCard from "../../templates/PlayingCard";
 
 function CardGrid({ cards, packSize, flipCards, firstFlip, secondFlip }) {
   return (

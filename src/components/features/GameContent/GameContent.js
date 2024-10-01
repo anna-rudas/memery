@@ -1,7 +1,7 @@
 import React, { useEffect, useCallback } from "react";
-import { className, calcPercentage } from "../../utilities/helpers";
+import { className, calcPercentage } from "../../../utilities/helpers";
 import * as style from "./GameContent.module.css";
-import * as shared from "../../assets/styles/shared.module.css";
+import * as shared from "../../../assets/styles/shared.module.css";
 import ProgressBar from "../ProgressBar";
 import CardsGrid from "../CardsGrid";
 

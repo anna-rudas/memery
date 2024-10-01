@@ -1,10 +1,10 @@
 import React from "react";
-import { className, generatePreviewPack } from "../../utilities/helpers";
+import { className, generatePreviewPack } from "../../../utilities/helpers";
 import * as style from "./SettingsModal.module.css";
-import * as shared from "../../assets/styles/shared.module.css";
-import SettingOptions from "../SettingOptions";
-import { sizeOptions, typeOptions } from "../../data/constants";
-import PackPreview from "../PackPreview";
+import * as shared from "../../../assets/styles/shared.module.css";
+import SettingOptions from "../../templates/SettingOptions";
+import { sizeOptions, typeOptions } from "../../../data/constants";
+import PackPreview from "../../templates/PackPreview";
 
 function Settings({
   packSize,
