@@ -5,6 +5,9 @@ import TitleScreen from "./components/TitleScreen";
 import Game from "./components/Game";
 import GameOver from "./components/GameOver";
 import Settings from "./components/Settings";
+import FontFaceObserver from "fontfaceobserver";
+
+const primaryFontObserver = new FontFaceObserver("VT323");
 
 function App() {
   const [isPlaying, setIsPlaying] = useState(false);
@@ -83,4 +86,6 @@ function App() {
 
 export default App;
 
-createRoot(document.getElementById("root")).render(<App />);
+Promise.all([primaryFontObserver.load()]).then(() => {
+  createRoot(document.getElementById("root")).render(<App />);
+});
