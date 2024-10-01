@@ -1,8 +1,8 @@
 import React from "react";
 import { className } from "../../utilities/helpers";
-import * as style from "./CardGrid.module.css";
+import * as style from "./CardsGrid.module.css";
 import * as shared from "../../assets/styles/shared.module.css";
-import Card from "./Card";
+import PlayingCard from "../PlayingCard";
 
 function CardGrid({ cards, packSize, flipCards, firstFlip, secondFlip }) {
   return (
@@ -16,7 +16,7 @@ function CardGrid({ cards, packSize, flipCards, firstFlip, secondFlip }) {
     >
       {cards.map((current) => {
         return (
-          <Card
+          <PlayingCard
             key={current.id}
             card={current}
             flipCards={flipCards}

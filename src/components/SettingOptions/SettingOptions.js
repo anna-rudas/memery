@@ -1,6 +1,6 @@
 import React from "react";
 import { className } from "../../utilities/helpers";
-import * as style from "./Settings.module.css";
+import * as style from "./SettingOptions.module.css";
 
 function Options({
   optionsTitle,

@@ -1,26 +1,3 @@
-.settingsCon {
-  position: absolute;
-  inset: 0;
-  margin: auto;
-  min-width: var(--btn-width);
-  max-width: 700px;
-  width: 90%;
-  min-height: 100px;
-  max-height: 500px;
-  height: 95%;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: calc(var(--gap) * 3);
-  padding: calc(var(--padding) * 2);
-  justify-content: space-around;
-  z-index: 5;
-}
-
-.settingsText {
-  font-size: 3rem;
-}
-
 .optionsCon {
   width: 100%;
   display: flex;
@@ -87,28 +64,14 @@
   background-color: var(--btn-hover);
 }
 
-.btnCon {
-  width: 100%;
-  display: flex;
-  justify-content: center;
-  height: 20%;
-}
-
-.playBtn {
-  max-width: var(--btn-width);
-  max-height: var(--btn-height);
-  min-height: 50px;
-  width: 100%;
-  height: 100%;
-  font-size: 2rem;
+@media (hover: hover) {
+  .labelText:hover {
+    color: var(--accent);
+    text-shadow: 2px 2px 2px var(--darkest);
+  }
 }
 
 @media (max-width: 600px) {
-  .settingsCon {
-    padding: var(--padding) calc(var(--padding) * 2);
-    max-height: 700px;
-  }
-
   .optionsCon {
     gap: var(--gap);
   }
@@ -134,20 +97,5 @@
 
   .labelText {
     padding: 2px;
-  }
-
-  .btnCon {
-    height: fit-content;
-  }
-
-  .playBtn {
-    font-size: 1.7rem;
-  }
-}
-
-@media (hover: hover) {
-  .labelText:hover {
-    color: var(--accent);
-    text-shadow: 2px 2px 2px var(--darkest);
   }
 }

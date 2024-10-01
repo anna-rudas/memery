@@ -1,9 +1,9 @@
 import React, { useEffect, useCallback } from "react";
 import { className, calcPercentage } from "../../utilities/helpers";
-import * as style from "./Game.module.css";
+import * as style from "./GameContent.module.css";
 import * as shared from "../../assets/styles/shared.module.css";
-import ProgressBar from "../ProgressBar/ProgressBar";
-import CardGrid from "../CardGrid/CardGrid";
+import ProgressBar from "../ProgressBar";
+import CardsGrid from "../CardsGrid";
 
 function Game({
   cards,
@@ -79,7 +79,7 @@ function Game({
         </button>
       </div>
       {!isSettingsOpen && (
-        <CardGrid
+        <CardsGrid
           cards={cards}
           packSize={packSize}
           flipCards={flipCards}

@@ -1,8 +1,8 @@
 import React from "react";
 import { className, generatePreviewPack } from "../../utilities/helpers";
-import * as style from "./Settings.module.css";
+import * as style from "./SettingsModal.module.css";
 import * as shared from "../../assets/styles/shared.module.css";
-import Options from "./Options";
+import SettingOptions from "../SettingOptions";
 import { sizeOptions, typeOptions } from "../../data/constants";
 import PackPreview from "../PackPreview";
 
@@ -35,14 +35,14 @@ function Settings({
         )}
       >
         <span {...className(style.settingsText)}>Settings</span>
-        <Options
+        <SettingOptions
           optionsTitle="Select the size:"
           radioOptions={sizeOptions}
           onRadioChange={setSize}
           name="selectsize"
           sizeOrType={packSize}
         />
-        <Options
+        <SettingOptions
           optionsTitle="Select the card pack:"
           radioOptions={typeOptions}
           onRadioChange={setType}

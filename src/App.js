@@ -2,9 +2,9 @@ import React, { useState, useEffect } from "react";
 import { createRoot } from "react-dom/client";
 import { generatePack, shuffleCards } from "./utilities/helpers";
 import TitleScreen from "./components/TitleScreen";
-import Game from "./components/Game";
-import GameOver from "./components/GameOver";
-import Settings from "./components/Settings";
+import GameContent from "./components/GameContent";
+import GameOverModal from "./components/GameOverModal";
+import SettingsModal from "./components/SettingsModal";
 import FontFaceObserver from "fontfaceobserver";
 
 const primaryFontObserver = new FontFaceObserver("VT323");
@@ -54,7 +54,7 @@ function App() {
     <div className="wrapper">
       {!isPlaying && <TitleScreen handleBtnClick={openSettings} />}
       {isPlaying && (
-        <Game
+        <GameContent
           cards={cards}
           setCards={setCards}
           handleBtnClick={openSettings}
@@ -70,9 +70,9 @@ function App() {
           isSettingsOpen={isSettingsOpen}
         />
       )}
-      {isGameOver && <GameOver handleBtnClick={openSettings} />}
+      {isGameOver && <GameOverModal handleBtnClick={openSettings} />}
       {isSettingsOpen && (
-        <Settings
+        <SettingsModal
           handleNewGame={handleNewGame}
           packSize={packSize}
           setPackSize={setPackSize}
