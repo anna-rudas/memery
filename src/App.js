@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useContext } from "react";
 import { createRoot } from "react-dom/client";
 import { generatePack, shuffleCards } from "./utilities/helpers";
 import TitleScreen from "./components/features/TitleScreen";
@@ -7,6 +7,7 @@ import GameOverModal from "./components/modals/GameOverModal";
 import SettingsModal from "./components/modals/SettingsModal";
 import FontFaceObserver from "fontfaceobserver";
 import PageLoading from "./components/loaders/PageLoading/PageLoading";
+import AppContextProvider, { AppContext } from "./context/AppContext";
 
 const primaryFontObserver = new FontFaceObserver("VT323");
 
@@ -21,7 +22,8 @@ function App() {
   const [packSize, setPackSize] = useState("medium");
   const [packType, setPackType] = useState("cryingCat");
   const [isSettingsOpen, setIsSettingsOpen] = useState(false);
-  const [isLoading, setIsLoading] = useState(true);
+
+  const { isLoading, setIsLoading } = useContext(AppContext);
 
   const resetGame = () => {
     setTurns(0);
@@ -95,8 +97,16 @@ function App() {
   );
 }
 
-export default App;
+function AppWithProvider() {
+  return (
+    <AppContextProvider>
+      <App />
+    </AppContextProvider>
+  );
+}
+
+export default AppWithProvider;
 
 Promise.all([primaryFontObserver.load()]).then(() => {
-  createRoot(document.getElementById("root")).render(<App />);
+  createRoot(document.getElementById("root")).render(<AppWithProvider />);
 });
