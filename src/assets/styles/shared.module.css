@@ -1,13 +1,12 @@
 .borders {
   border-style: solid;
-  border-color: var(--secondary-light) var(--secondary-medium)
-    var(--secondary-medium) var(--secondary-light);
+  border-color: var(--border-light) var(--border-medium) var(--border-medium)
+    var(--border-light);
 }
 
-.metalBase {
+.baseElement {
   border-width: 8px;
-  background-color: var(--card-bg);
-  color: var(--darkest);
+  background-color: var(--base-bg);
 }
 
 .shadow {
@@ -15,7 +14,7 @@
 }
 
 @media (max-width: 450px) {
-  .metalBase {
+  .baseElement {
     border-width: 6px;
   }
 }

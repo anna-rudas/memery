@@ -10,7 +10,7 @@ function CardGrid({ cards, packSize, flipCards, firstFlip, secondFlip }) {
       {...className(
         style.cardGridCon,
         shared.borders,
-        shared.metalBase,
+        shared.baseElement,
         style[`${packSize}Grid`]
       )}
     >

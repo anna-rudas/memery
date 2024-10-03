@@ -13,7 +13,7 @@ body,
 }
 
 :root {
-  --card-bg: #bebcbc;
+  --base-bg: #bebcbc;
   --btn-bg: #c7c5c5;
   --btn-hover: #acaaaa;
   --btn-active: #979494;
@@ -21,9 +21,9 @@ body,
   --darkest: #000;
   --lightest: #fff;
   --accent: #eaac02;
-  --secondary-light: #d8d8d8;
-  --secondary-medium: #757575;
-  --secondary-dark: #2d2c2c;
+  --border-light: #d8d8d8;
+  --border-medium: #757575;
+  --border-dark: #2d2c2c;
   --border-radius: 10px;
   --margin: 10px;
   --padding: 5px;

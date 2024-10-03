@@ -16,7 +16,7 @@ function ProgressBar({ turns, cards, countMatched, calcPercentage }) {
   }, []);
 
   return (
-    <div {...className(style.progressCon, shared.borders, shared.metalBase)}>
+    <div {...className(style.progressCon, shared.borders, shared.baseElement)}>
       <div {...className(style.turns, textStyles.normalText)}>
         Turns: {turns}
       </div>

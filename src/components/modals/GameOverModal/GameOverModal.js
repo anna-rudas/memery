@@ -18,7 +18,7 @@ function GameOver({ handleBtnClick }) {
           style.gameOverCon,
           modals.slideDown,
           shared.borders,
-          shared.metalBase,
+          shared.baseElement,
           shared.shadow
         )}
       >
