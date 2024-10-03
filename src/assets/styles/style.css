@@ -4,8 +4,6 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: "VT323", monospace;
-  text-transform: uppercase;
 }
 
 html,
@@ -32,6 +30,7 @@ body,
   --gap: 3px;
   --btn-width: 230px;
   --btn-height: 70px;
+  --primary-font: "VT323";
 }
 
 .wrapper {

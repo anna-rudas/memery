@@ -17,10 +17,6 @@
   z-index: 5;
 }
 
-.settingsText {
-  font-size: 3rem;
-}
-
 .btnCon {
   width: 100%;
   display: flex;
@@ -44,9 +40,5 @@
 
   .btnCon {
     height: fit-content;
-  }
-
-  .playBtn {
-    font-size: 1.7rem;
   }
 }

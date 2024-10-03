@@ -2,12 +2,25 @@
   max-width: 230px;
   width: 90%;
   height: 70px;
-  font-size: 2rem;
+  border-width: 6px;
+  background-color: var(--btn-bg);
+}
+
+.primaryButton:active {
+  background-color: var(--btn-active);
+}
+
+@media (hover: hover) {
+  .primaryButton:hover {
+    cursor: pointer;
+    background-color: var(--btn-hover);
+    color: var(--accent);
+    text-shadow: 2px 2px 2px var(--darkest);
+  }
 }
 
 @media (max-width: 450px) {
   .primaryButton {
-    font-size: 1.8rem;
     max-width: 200px;
   }
 }

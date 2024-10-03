@@ -10,55 +10,6 @@
   color: var(--darkest);
 }
 
-.btn {
-  border-width: 6px;
-  background-color: var(--btn-bg);
-  color: var(--darkest);
-}
-
-.btn:active {
-  background-color: var(--btn-active);
-}
-
-.modalCon {
-  position: fixed;
-  inset: 0;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  z-index: 3;
-  animation-name: darkening;
-  animation-duration: 0.7s;
-  animation-iteration-count: 1;
-  animation-timing-function: ease-in-out;
-  animation-fill-mode: forwards;
-}
-
-@keyframes darkening {
-  0% {
-    background-color: transparent;
-  }
-  100% {
-    background-color: var(--modal-bg);
-  }
-}
-
-.slideDown {
-  animation-name: slideDown;
-  animation-duration: 0.8s;
-  animation-iteration-count: 1;
-  animation-timing-function: ease-in-out;
-  animation-fill-mode: forwards;
-}
-
-@keyframes slideDown {
-  0% {
-    top: -200vh;
-  }
-  100% {
-  }
-}
-
 .shadow {
   box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
 }
@@ -66,14 +17,5 @@
 @media (max-width: 450px) {
   .metalBase {
     border-width: 6px;
-  }
-}
-
-@media (hover: hover) {
-  .btn:hover {
-    cursor: pointer;
-    background-color: var(--btn-hover);
-    color: var(--accent);
-    text-shadow: 2px 2px 2px var(--darkest);
   }
 }

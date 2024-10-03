@@ -2,6 +2,8 @@ import React from "react";
 import { className } from "../../../utilities/helpers";
 import * as style from "./GameOverModal.module.css";
 import * as shared from "../../../assets/styles/shared.module.css";
+import * as modals from "../../../assets/styles/modals.module.css";
+import * as textStyles from "../../../assets/styles/text-styles.module.css";
 import PrimaryButton from "../../buttons/PrimaryButton/PrimaryButton";
 
 function GameOver({ handleBtnClick }) {
@@ -10,17 +12,17 @@ function GameOver({ handleBtnClick }) {
   };
 
   return (
-    <div {...className(shared.modalCon)}>
+    <div {...className(modals.modalCon)}>
       <div
         {...className(
           style.gameOverCon,
-          shared.slideDown,
+          modals.slideDown,
           shared.borders,
           shared.metalBase,
           shared.shadow
         )}
       >
-        <span> Game over</span>
+        <span {...className(textStyles.secondaryTitleText)}> Game over</span>
 
         <PrimaryButton
           buttonText={"Play again"}

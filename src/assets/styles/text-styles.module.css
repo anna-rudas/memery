@@ -1,0 +1,62 @@
+.buttonTextSmall {
+  text-transform: uppercase;
+  color: var(--darkest);
+  font-family: var(--primary-font);
+  font-size: 1.5rem;
+}
+
+.buttonTextMedium {
+  text-transform: uppercase;
+  color: var(--darkest);
+  font-family: var(--primary-font);
+  font-size: 2rem;
+}
+
+.primaryTitleText {
+  text-transform: uppercase;
+  color: var(--accent);
+  font-family: var(--primary-font);
+  font-size: 11rem;
+  text-shadow: 2px 2px 2px var(--darkest);
+  line-height: 100%;
+}
+
+.subtitleText {
+  text-transform: uppercase;
+  color: var(--accent);
+  font-family: var(--primary-font);
+  font-size: 2.3rem;
+  text-shadow: 2px 2px 2px var(--darkest);
+}
+
+.secondaryTitleText {
+  text-transform: uppercase;
+  color: var(--darkest);
+  font-family: var(--primary-font);
+  font-size: 3rem;
+}
+
+.normalText {
+  text-transform: uppercase;
+  color: var(--darkest);
+  font-family: var(--primary-font);
+  font-size: 1.8rem;
+}
+
+@media (max-width: 450px) {
+  .buttonTextSmall {
+    font-size: 1.3rem;
+  }
+  .buttonTextMedium {
+    font-size: 1.8rem;
+  }
+  .primaryTitleText {
+    font-size: 5rem;
+  }
+  .secondaryTitleText {
+    font-size: 2rem;
+  }
+  .normalText {
+    font-size: 1.5rem;
+  }
+}

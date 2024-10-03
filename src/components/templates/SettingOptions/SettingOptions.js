@@ -1,6 +1,7 @@
 import React from "react";
 import { className } from "../../../utilities/helpers";
 import * as style from "./SettingOptions.module.css";
+import * as textStyles from "../../../assets/styles/text-styles.module.css";
 
 function Options({
   optionsTitle,
@@ -11,7 +12,9 @@ function Options({
 }) {
   return (
     <div {...className(style.optionsCon)}>
-      <p {...className(style.optionsTitle)}>{optionsTitle}</p>
+      <p {...className(style.optionsTitle, textStyles.normalText)}>
+        {optionsTitle}
+      </p>
       <div {...className(style.radioOptions)}>
         {radioOptions.map((current) => {
           return (
@@ -24,7 +27,9 @@ function Options({
                 value={current.value}
                 defaultChecked={current.value === sizeOrType}
               />
-              <span {...className(style.labelText)}>{current.text}</span>
+              <span {...className(style.labelText, textStyles.buttonTextSmall)}>
+                {current.text}
+              </span>
             </label>
           );
         })}

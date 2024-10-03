@@ -2,6 +2,8 @@ import React from "react";
 import { className, generatePreviewPack } from "../../../utilities/helpers";
 import * as style from "./SettingsModal.module.css";
 import * as shared from "../../../assets/styles/shared.module.css";
+import * as modals from "../../../assets/styles/modals.module.css";
+import * as textStyles from "../../../assets/styles/text-styles.module.css";
 import SettingOptions from "../../templates/SettingOptions";
 import { sizeOptions, typeOptions } from "../../../data/constants";
 import PackPreview from "../../templates/PackPreview";
@@ -25,17 +27,17 @@ function Settings({
   const previewPack = generatePreviewPack(3, packType);
 
   return (
-    <div {...className(shared.modalCon)}>
+    <div {...className(modals.modalCon)}>
       <div
         {...className(
           style.settingsCon,
-          shared.slideDown,
+          modals.slideDown,
           shared.borders,
           shared.metalBase,
           shared.shadow
         )}
       >
-        <span {...className(style.settingsText)}>Settings</span>
+        <span {...className(textStyles.secondaryTitleText)}>Settings</span>
         <SettingOptions
           optionsTitle="Select the size:"
           radioOptions={sizeOptions}

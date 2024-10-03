@@ -8,12 +8,10 @@
 }
 
 .optionsTitle {
-  font-size: 1.8rem;
   width: 100%;
 }
 
 .radioOptions {
-  font-size: 1.5rem;
   display: flex;
   gap: calc(var(--gap) * 2);
   align-items: center;
@@ -76,17 +74,8 @@
     gap: var(--gap);
   }
 
-  .settingsText {
-    font-size: 1.8rem;
-  }
-
-  .optionsTitle {
-    font-size: 1.2rem;
-  }
-
   .radioOptions {
     flex-direction: column;
-    font-size: 1.1rem;
     gap: var(--gap);
     max-height: fit-content;
   }

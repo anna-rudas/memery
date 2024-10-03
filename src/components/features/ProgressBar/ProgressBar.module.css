@@ -6,7 +6,6 @@
   justify-content: center;
   height: 10%;
   gap: calc(var(--gap) * 2);
-  font-size: 1.8rem;
   padding: var(--padding);
 }
 
@@ -49,7 +48,6 @@
 
 @media (max-width: 450px) {
   .progressCon {
-    font-size: 1.7rem;
     gap: var(--gap);
   }
 

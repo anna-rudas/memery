@@ -18,19 +18,6 @@
   align-items: center;
 }
 
-.titleTextPrimary {
-  color: var(--accent);
-  text-shadow: 2px 2px 2px var(--darkest);
-  font-size: 11rem;
-  line-height: 100%;
-}
-
-.titleTextSecondary {
-  color: var(--accent);
-  text-shadow: 2px 2px 2px var(--darkest);
-  font-size: 2.3rem;
-}
-
 .btnCon {
   display: flex;
   height: 50%;
@@ -62,11 +49,5 @@
     max-width: var(--btn-width);
     height: 50px;
     font-size: 2rem;
-  }
-}
-
-@media (max-width: 450px) {
-  .titleTextPrimary {
-    font-size: 5rem;
   }
 }

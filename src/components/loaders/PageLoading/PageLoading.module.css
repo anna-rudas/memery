@@ -14,10 +14,6 @@
   color: var(--lightest);
 }
 
-.loadingText {
-  font-size: 1.8rem;
-}
-
 .titleTextContainer {
   position: relative;
   display: flex;
@@ -27,9 +23,12 @@
   height: 100px;
 }
 
+.loadingText {
+  color: var(--lightest) !important;
+}
+
 .titleText {
-  font-size: 5rem;
-  color: var(--accent);
+  color: var(--accent) !important;
 }
 
 .animationHelper {
