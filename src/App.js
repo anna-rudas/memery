@@ -6,6 +6,7 @@ import GameContent from "./components/features/GameContent";
 import GameOverModal from "./components/modals/GameOverModal";
 import SettingsModal from "./components/modals/SettingsModal";
 import FontFaceObserver from "fontfaceobserver";
+import PageLoading from "./components/loaders/PageLoading/PageLoading";
 
 const primaryFontObserver = new FontFaceObserver("VT323");
 
@@ -20,6 +21,7 @@ function App() {
   const [packSize, setPackSize] = useState("medium");
   const [packType, setPackType] = useState("cryingCat");
   const [isSettingsOpen, setIsSettingsOpen] = useState(false);
+  const [isLoading, setIsLoading] = useState(true);
 
   const resetGame = () => {
     setTurns(0);
@@ -39,6 +41,12 @@ function App() {
   };
 
   useEffect(() => {
+    setTimeout(() => {
+      setIsLoading(false);
+    }, 2000);
+  });
+
+  useEffect(() => {
     if (countMatched !== 0 && countMatched === cards.length / 2) {
       setTimeout(() => {
         setIsGameOver(true);
@@ -52,8 +60,11 @@ function App() {
 
   return (
     <div className="wrapper">
-      {!isPlaying && <TitleScreen handleBtnClick={openSettings} />}
-      {isPlaying && (
+      {isLoading && !isPlaying && <PageLoading />}
+      {!isLoading && !isPlaying && (
+        <TitleScreen handleBtnClick={openSettings} />
+      )}
+      {!isLoading && isPlaying && (
         <GameContent
           cards={cards}
           setCards={setCards}

@@ -1,0 +1,63 @@
+.modalBg {
+  z-index: 10;
+  background-color: rgba(0, 0, 0, 0.7) !important;
+}
+.loadingContainer {
+  display: flex;
+  height: fit-content;
+  width: fit-content;
+  flex-direction: column;
+  gap: 10px;
+  padding: 20px;
+  justify-content: center;
+  align-items: center;
+  color: var(--lightest);
+}
+
+.loadingText {
+  font-size: 1.8rem;
+}
+
+.titleTextContainer {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 300px;
+  height: 100px;
+}
+
+.titleText {
+  font-size: 5rem;
+  color: var(--accent);
+}
+
+.animationHelper {
+  width: 100%;
+  height: 100%;
+  z-index: 20;
+  background-color: transparent;
+  position: absolute;
+  inset: 0;
+}
+
+.loadingAnimation {
+  animation-name: loading;
+  animation-duration: 1.5s;
+  animation-timing-function: ease-in-out;
+  animation-iteration-count: infinite;
+}
+
+@keyframes loading {
+  0% {
+    opacity: 0;
+  }
+
+  50% {
+    opacity: 100%;
+  }
+
+  100% {
+    opacity: 0;
+  }
+}
