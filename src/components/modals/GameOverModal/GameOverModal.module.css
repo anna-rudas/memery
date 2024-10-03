@@ -15,10 +15,3 @@
   font-size: 2rem;
   z-index: 4;
 }
-
-.playBtn {
-  max-width: var(--btn-width);
-  width: 90%;
-  height: var(--btn-height);
-  font-size: 2rem;
-}

@@ -1,9 +1,9 @@
 import React, { useEffect, useCallback } from "react";
 import { className, calcPercentage } from "../../../utilities/helpers";
 import * as style from "./GameContent.module.css";
-import * as shared from "../../../assets/styles/shared.module.css";
 import ProgressBar from "../ProgressBar";
 import CardsGrid from "../CardsGrid";
+import PrimaryButton from "../../buttons/PrimaryButton/PrimaryButton";
 
 function Game({
   cards,
@@ -71,12 +71,11 @@ function Game({
   return (
     <div {...className(style.gameCon)}>
       <div {...className(style.btnCon)}>
-        <button
-          onClick={handleBtnClick}
-          {...className(shared.borders, shared.btn, style.newGameBtn)}
-        >
-          Start new game
-        </button>
+        <PrimaryButton
+          buttonText={"Start new game"}
+          buttonStyle={style.newGameBtn}
+          handleClick={handleBtnClick}
+        />
       </div>
       {!isSettingsOpen && (
         <CardsGrid

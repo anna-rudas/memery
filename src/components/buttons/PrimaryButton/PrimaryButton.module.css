@@ -1,0 +1,13 @@
+.primaryButton {
+  max-width: 230px;
+  width: 90%;
+  height: 70px;
+  font-size: 2rem;
+}
+
+@media (max-width: 450px) {
+  .primaryButton {
+    font-size: 1.8rem;
+    max-width: 200px;
+  }
+}

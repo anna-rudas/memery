@@ -1,10 +1,10 @@
 import React from "react";
 import { className } from "../../../utilities/helpers";
 import * as style from "./TitleScreen.module.css";
-import * as shared from "../../../assets/styles/shared.module.css";
+import PrimaryButton from "../../buttons/PrimaryButton/PrimaryButton";
 
 function TitleScreen({ handleBtnClick }) {
-  const handleClick = () => {
+  const handleTitleScreenButtonClick = () => {
     handleBtnClick();
   };
 
@@ -15,17 +15,11 @@ function TitleScreen({ handleBtnClick }) {
         <h2 {...className(style.titleTextSecondary)}>A simple memory game</h2>
       </div>
       <div {...className(style.btnCon)}>
-        <button
-          onClick={handleClick}
-          {...className(
-            shared.borders,
-            shared.btn,
-            style.startBtn,
-            style.startEffect
-          )}
-        >
-          Start
-        </button>
+        <PrimaryButton
+          buttonText={"Start"}
+          buttonStyle={style.titleScreenButton}
+          handleClick={handleTitleScreenButtonClick}
+        />
       </div>
     </div>
   );

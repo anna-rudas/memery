@@ -17,16 +17,5 @@
 }
 
 .newGameBtn {
-  max-width: var(--btn-width);
-  max-height: var(--btn-height);
-  width: 90%;
   height: 100%;
-  font-size: 2rem;
-}
-
-@media (max-width: 450px) {
-  .newGameBtn {
-    font-size: 1.8rem;
-    max-width: 200px;
-  }
 }

@@ -5,6 +5,7 @@ import * as shared from "../../../assets/styles/shared.module.css";
 import SettingOptions from "../../templates/SettingOptions";
 import { sizeOptions, typeOptions } from "../../../data/constants";
 import PackPreview from "../../templates/PackPreview";
+import PrimaryButton from "../../buttons/PrimaryButton/PrimaryButton";
 
 function Settings({
   packSize,
@@ -52,12 +53,11 @@ function Settings({
         <PackPreview pack={previewPack} />
 
         <div {...className(style.btnCon)}>
-          <button
-            onClick={handleNewGame}
-            {...className(shared.borders, shared.btn, style.playBtn)}
-          >
-            Play!
-          </button>
+          <PrimaryButton
+            buttonText={"Play!"}
+            buttonStyle={style.playBtn}
+            handleClick={handleNewGame}
+          />
         </div>
       </div>
     </div>

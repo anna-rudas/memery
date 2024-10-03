@@ -2,9 +2,10 @@ import React from "react";
 import { className } from "../../../utilities/helpers";
 import * as style from "./GameOverModal.module.css";
 import * as shared from "../../../assets/styles/shared.module.css";
+import PrimaryButton from "../../buttons/PrimaryButton/PrimaryButton";
 
 function GameOver({ handleBtnClick }) {
-  const handleClick = () => {
+  const handleGameOverButtonClick = () => {
     handleBtnClick();
   };
 
@@ -20,12 +21,11 @@ function GameOver({ handleBtnClick }) {
         )}
       >
         <span> Game over</span>
-        <button
-          onClick={handleClick}
-          {...className(shared.borders, shared.btn, style.playBtn)}
-        >
-          Play again
-        </button>
+
+        <PrimaryButton
+          buttonText={"Play again"}
+          handleClick={handleGameOverButtonClick}
+        />
       </div>
     </div>
   );

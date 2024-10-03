@@ -39,14 +39,8 @@
   justify-content: center;
 }
 
-.startBtn {
-  max-width: var(--btn-width);
-  width: 90%;
+.titleScreenButton {
   height: 50px;
-  font-size: 2rem;
-}
-
-.startEffect {
   animation-name: pressStart;
   animation-iteration-count: infinite;
   animation-timing-function: ease-in-out;
