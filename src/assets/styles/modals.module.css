@@ -1,12 +1,16 @@
-.slideDown {
-  animation-name: slideDown;
+.slideDownContent {
+  position: absolute;
+  inset: 0;
+  margin: auto;
+  z-index: 4;
+  animation-name: slideDownAnimation;
   animation-duration: 0.8s;
   animation-iteration-count: 1;
   animation-timing-function: ease-in-out;
   animation-fill-mode: forwards;
 }
 
-@keyframes slideDown {
+@keyframes slideDownAnimation {
   0% {
     top: -200vh;
   }

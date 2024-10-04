@@ -9,18 +9,16 @@ function TitleScreen() {
   const { setIsSettingsOpen } = useContext(AppContext);
 
   return (
-    <div {...className(style.titleScreen)}>
-      <div {...className(style.titleText)}>
+    <div {...className(style.titleScreenContainer)}>
+      <div {...className(style.gameTitleContent)}>
         <h1 {...className(textStyles.primaryTitleText)}>Memery</h1>
         <h2 {...className(textStyles.subtitleText)}>A simple memory game</h2>
       </div>
-      <div {...className(style.btnCon)}>
-        <PrimaryButton
-          buttonText={"Start"}
-          buttonStyle={style.titleScreenButton}
-          handleClick={() => setIsSettingsOpen(true)}
-        />
-      </div>
+      <PrimaryButton
+        buttonText={"Start"}
+        buttonStyle={style.titleScreenButton}
+        handleClick={() => setIsSettingsOpen(true)}
+      />
     </div>
   );
 }

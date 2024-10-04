@@ -9,26 +9,25 @@ import { AppContext } from "../../../context/AppContext";
 import ModalContainer from "../../templates/ModalContainer/ModalContainer";
 
 function GameOver() {
-  const { setIsSettingsOpen, setIsGameOver } = useContext(AppContext);
+  const { setIsSettingsOpen, setIsGameOverOpen } = useContext(AppContext);
 
   const handlePlayAgain = () => {
     setIsSettingsOpen(true);
-    setIsGameOver(false);
+    setIsGameOverOpen(false);
   };
 
   return (
     <ModalContainer>
       <div
         {...className(
-          style.gameOverCon,
-          modals.slideDown,
+          style.gameOverContent,
+          modals.slideDownContent,
           shared.borders,
           shared.baseElement,
           shared.shadow
         )}
       >
-        <span {...className(textStyles.secondaryTitleText)}> Game over</span>
-
+        <span {...className(textStyles.secondaryTitleText)}>Game over</span>
         <PrimaryButton
           buttonText={"Play again"}
           handleClick={handlePlayAgain}

@@ -12,25 +12,22 @@ import { AppContext } from "../../../context/AppContext";
 import ModalContainer from "../../templates/ModalContainer/ModalContainer";
 
 function Settings() {
-  const { packSize, setPackSize, packType, setPackType, handleNewGame } =
-    useContext(AppContext);
+  const {
+    selectedPackSize,
+    setSelectedPackSize,
+    selectedPackType,
+    setSelectedPackType,
+    handleNewGame,
+  } = useContext(AppContext);
 
-  const setSize = (event) => {
-    setPackSize(event.target.value);
-  };
-
-  const setType = (event) => {
-    setPackType(event.target.value);
-  };
-
-  const previewPack = generatePreviewPack(3, packType);
+  const previewPack = generatePreviewPack(3, selectedPackType);
 
   return (
     <ModalContainer>
       <div
         {...className(
-          style.settingsCon,
-          modals.slideDown,
+          style.settingsContent,
+          modals.slideDownContent,
           shared.borders,
           shared.baseElement,
           shared.shadow
@@ -40,26 +37,23 @@ function Settings() {
         <SettingOptions
           optionsTitle="Select the size:"
           radioOptions={sizeOptions}
-          onRadioChange={setSize}
-          name="selectsize"
-          sizeOrType={packSize}
+          onRadioChange={(event) => setSelectedPackSize(event.target.value)}
+          name="select-size"
+          sizeOrType={selectedPackSize}
         />
         <SettingOptions
           optionsTitle="Select the card pack:"
           radioOptions={typeOptions}
-          onRadioChange={setType}
-          name="selecttype"
-          sizeOrType={packType}
+          onRadioChange={(event) => setSelectedPackType(event.target.value)}
+          name="select-type"
+          sizeOrType={selectedPackType}
         />
         <PackPreview pack={previewPack} />
-
-        <div {...className(style.btnCon)}>
-          <PrimaryButton
-            buttonText={"Play!"}
-            buttonStyle={style.playBtn}
-            handleClick={handleNewGame}
-          />
-        </div>
+        <PrimaryButton
+          buttonText={"Play!"}
+          buttonStyle={style.button}
+          handleClick={handleNewGame}
+        />
       </div>
     </ModalContainer>
   );

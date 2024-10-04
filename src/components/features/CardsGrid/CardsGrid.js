@@ -6,15 +6,16 @@ import PlayingCard from "../../templates/PlayingCard";
 import { AppContext } from "../../../context/AppContext";
 
 function CardGrid() {
-  const { cards, packSize, firstFlip, secondFlip } = useContext(AppContext);
+  const { cards, selectedPackSize, firstCardFlip, secondCardFlip } =
+    useContext(AppContext);
 
   return (
     <div
       {...className(
-        style.cardGridCon,
+        style.cardsGridContainer,
         shared.borders,
         shared.baseElement,
-        style[`${packSize}Grid`]
+        style[`${selectedPackSize}Grid`]
       )}
     >
       {cards.map((current) => {
@@ -23,11 +24,11 @@ function CardGrid() {
             key={current.id}
             card={current}
             flipped={
-              current.id === firstFlip?.id ||
-              current.id === secondFlip?.id ||
+              current.id === firstCardFlip?.id ||
+              current.id === secondCardFlip?.id ||
               current.matched
             }
-            disabled={secondFlip || current.matched}
+            disabled={secondCardFlip || current.matched}
           />
         );
       })}

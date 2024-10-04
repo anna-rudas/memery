@@ -1,5 +1,5 @@
 .primaryButton {
-  max-width: 230px;
+  max-width: var(--btn-width);
   width: 90%;
   height: 70px;
   border-width: 6px;

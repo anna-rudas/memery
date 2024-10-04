@@ -5,16 +5,17 @@ import { className } from "../../../utilities/helpers";
 import { AppContext } from "../../../context/AppContext";
 
 function Card({ card, disabled, flipped }) {
-  const { firstFlip, setFirstFlip, setSecondFlip } = useContext(AppContext);
+  const { firstCardFlip, setFirstCardFlip, setSecondCardFlip } =
+    useContext(AppContext);
 
   const flipCards = (card) => {
-    if (!firstFlip) {
-      setFirstFlip(card);
+    if (!firstCardFlip) {
+      setFirstCardFlip(card);
       return;
     }
 
-    if (card.id !== firstFlip.id) {
-      setSecondFlip(card);
+    if (card.id !== firstCardFlip.id) {
+      setSecondCardFlip(card);
     }
   };
 
@@ -25,14 +26,14 @@ function Card({ card, disabled, flipped }) {
   };
 
   return (
-    <div {...className(style.card, flipped && style.cardFlipped)}>
+    <div {...className(style.playingCard, flipped && style.cardFlipped)}>
       <img
         {...className(style.cardFace, card.matched && style.matchedEffect)}
         src={card.src}
         alt=""
       />
       <button
-        {...className(style.btn, flipped && style.btnFlipped)}
+        {...className(style.cardButton, flipped && style.cardButtonFlipped)}
         onClick={handlePlayingCardClick}
       >
         <img {...className(style.cardBack)} src={cover} alt="" />

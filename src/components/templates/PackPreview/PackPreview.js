@@ -5,11 +5,11 @@ import * as shared from "../../../assets/styles/shared.module.css";
 
 function PackPreview({ pack }) {
   return (
-    <div {...className(style.previewCon)}>
+    <div {...className(style.packPreviewContainer)}>
       {pack.map((currentCard) => {
         return (
           <img
-            {...className(style.previewImg, shared.shadow)}
+            {...className(style.packPreviewImage, shared.shadow)}
             key={currentCard.src}
             src={currentCard.src}
             alt=""

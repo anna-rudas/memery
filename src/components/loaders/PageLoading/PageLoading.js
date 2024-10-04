@@ -6,22 +6,20 @@ import ModalContainer from "../../templates/ModalContainer/ModalContainer";
 
 function PageLoading() {
   return (
-    <ModalContainer modalContainerStyle={style.modalBg}>
-      <div {...className(style.loadingContainer)}>
+    <ModalContainer modalContainerStyle={style.modalContainer}>
+      <div {...className(style.modalContent)}>
         <span {...className(textStyles.normalText, style.loadingText)}>
           Loading
         </span>
-        <div {...className(style.titleTextContainer)}>
-          <span
-            {...className(
-              textStyles.secondaryTitleText,
-              style.titleText,
-              style.loadingAnimation
-            )}
-          >
-            MEMERY
-          </span>
-        </div>
+        <span
+          {...className(
+            textStyles.secondaryTitleText,
+            style.titleText,
+            style.loadingAnimation
+          )}
+        >
+          MEMERY
+        </span>
       </div>
     </ModalContainer>
   );

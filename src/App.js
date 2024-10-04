@@ -11,7 +11,7 @@ import AppContextProvider, { AppContext } from "./context/AppContext";
 const primaryFontObserver = new FontFaceObserver("VT323");
 
 function App() {
-  const { isLoading, setIsLoading, isPlaying, isGameOver, isSettingsOpen } =
+  const { isLoading, setIsLoading, isPlaying, isGameOverOpen, isSettingsOpen } =
     useContext(AppContext);
 
   useEffect(() => {
@@ -25,7 +25,7 @@ function App() {
       {isLoading && <PageLoading />}
       {!isLoading && !isPlaying && <TitleScreen />}
       {!isLoading && isPlaying && <GameContent />}
-      {isGameOver && <GameOverModal />}
+      {isGameOverOpen && <GameOverModal />}
       {isSettingsOpen && <SettingsModal />}
     </div>
   );

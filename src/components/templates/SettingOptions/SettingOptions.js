@@ -11,14 +11,14 @@ function Options({
   sizeOrType,
 }) {
   return (
-    <div {...className(style.optionsCon)}>
-      <p {...className(style.optionsTitle, textStyles.normalText)}>
+    <div {...className(style.settingOptionsContainer)}>
+      <span {...className(style.optionsTitle, textStyles.normalText)}>
         {optionsTitle}
-      </p>
-      <div {...className(style.radioOptions)}>
+      </span>
+      <div {...className(style.radioOptionsContainer)}>
         {radioOptions.map((current) => {
           return (
-            <label key={current.value} {...className(style.optionLabel)}>
+            <label key={current.value} {...className(style.radioOptionLabel)}>
               <input
                 {...className(style.radioInput)}
                 onClick={onRadioChange}
@@ -27,7 +27,12 @@ function Options({
                 value={current.value}
                 defaultChecked={current.value === sizeOrType}
               />
-              <span {...className(style.labelText, textStyles.buttonTextSmall)}>
+              <span
+                {...className(
+                  style.labelTextContent,
+                  textStyles.buttonTextSmall
+                )}
+              >
                 {current.text}
               </span>
             </label>

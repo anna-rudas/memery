@@ -6,7 +6,7 @@ import * as textStyles from "../../../assets/styles/text-styles.module.css";
 import { AppContext } from "../../../context/AppContext";
 
 function ProgressBar() {
-  const { cards, turns, countMatched } = useContext(AppContext);
+  const { cards, turnCount, cardMatchCount } = useContext(AppContext);
 
   const [matches, setMatches] = useState(
     window.matchMedia("(min-width: 451px)").matches
@@ -19,22 +19,30 @@ function ProgressBar() {
   }, []);
 
   return (
-    <div {...className(style.progressCon, shared.borders, shared.baseElement)}>
-      <div {...className(style.turns, textStyles.normalText)}>
-        Turns: {turns}
-      </div>
-      <div {...className(style.progress)}>
+    <div
+      {...className(
+        style.progressBarContainer,
+        shared.borders,
+        shared.baseElement
+      )}
+    >
+      <span {...className(style.turnsCountContainer, textStyles.normalText)}>
+        Turns: {turnCount}
+      </span>
+      <div {...className(style.progressBarContent)}>
         {matches && (
           <span {...className(textStyles.normalText)}>Progress:</span>
         )}
-        <div {...className(style.barBorders)}>
+        <div {...className(style.progressBarBorders)}>
           <div
-            {...className(style.barBackground)}
-            style={{ width: calculatePercentage(cards, countMatched) + "%" }}
+            {...className(style.progressBarBackground)}
+            style={{ width: calculatePercentage(cards, cardMatchCount) + "%" }}
           ></div>
         </div>
-        <span {...className(style.percentage, textStyles.normalText)}>
-          {calculatePercentage(cards, countMatched)}%
+        <span
+          {...className(style.progressBarPercentage, textStyles.normalText)}
+        >
+          {calculatePercentage(cards, cardMatchCount)}%
         </span>
       </div>
     </div>

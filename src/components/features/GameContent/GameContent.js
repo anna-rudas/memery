@@ -10,30 +10,30 @@ function Game() {
   const {
     cards,
     setCards,
-    firstFlip,
-    setFirstFlip,
-    secondFlip,
-    setSecondFlip,
+    firstCardFlip,
+    setFirstCardFlip,
+    secondCardFlip,
+    setSecondCardFlip,
     isSettingsOpen,
-    turns,
-    setTurns,
-    countMatched,
-    setCountMatched,
+    turnCount,
+    setTurnCount,
+    cardMatchCount,
+    setCardMatchCount,
     setIsSettingsOpen,
   } = useContext(AppContext);
 
   const resetFlips = useCallback(() => {
-    setFirstFlip(null);
-    setSecondFlip(null);
-    setTurns(turns + 1);
-  }, [setFirstFlip, setSecondFlip, setTurns, turns]);
+    setFirstCardFlip(null);
+    setSecondCardFlip(null);
+    setTurnCount(turnCount + 1);
+  }, [setFirstCardFlip, setSecondCardFlip, setTurnCount, turnCount]);
 
   const compareCards = useCallback(() => {
-    if (secondFlip) {
-      if (firstFlip.src === secondFlip.src) {
-        setCountMatched(countMatched + 1);
+    if (secondCardFlip) {
+      if (firstCardFlip.src === secondCardFlip.src) {
+        setCardMatchCount(cardMatchCount + 1);
         const temp = cards.map((current) => {
-          if (current.src === firstFlip.src) {
+          if (current.src === firstCardFlip.src) {
             return { ...current, matched: true };
           } else {
             return current;
@@ -45,26 +45,26 @@ function Game() {
     }
   }, [
     cards,
-    countMatched,
-    firstFlip,
+    cardMatchCount,
+    firstCardFlip,
     resetFlips,
-    secondFlip,
+    secondCardFlip,
     setCards,
-    setCountMatched,
+    setCardMatchCount,
   ]);
 
   useEffect(() => {
     setTimeout(() => {
       compareCards();
     }, 700);
-  }, [secondFlip, compareCards]);
+  }, [secondCardFlip, compareCards]);
 
   return (
-    <div {...className(style.gameCon)}>
-      <div {...className(style.btnCon)}>
+    <div {...className(style.gameContainer)}>
+      <div {...className(style.buttonContainer)}>
         <PrimaryButton
           buttonText={"Start new game"}
-          buttonStyle={style.newGameBtn}
+          buttonStyle={style.button}
           handleClick={() => setIsSettingsOpen(true)}
         />
       </div>

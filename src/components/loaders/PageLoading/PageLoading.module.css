@@ -1,26 +1,15 @@
-.modalBg {
-  z-index: 10;
+.modalContainer {
   background-color: rgba(0, 0, 0, 0.7) !important;
 }
-.loadingContainer {
+.modalContent {
   display: flex;
+  justify-content: center;
+  align-items: center;
   height: fit-content;
   width: fit-content;
   flex-direction: column;
-  gap: 10px;
-  padding: 20px;
-  justify-content: center;
-  align-items: center;
-  color: var(--lightest);
-}
-
-.titleTextContainer {
-  position: relative;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  width: 300px;
-  height: 100px;
+  gap: calc(var(--gap) * 3);
+  padding: calc(var(--padding) * 4);
 }
 
 .loadingText {
@@ -29,15 +18,6 @@
 
 .titleText {
   color: var(--accent) !important;
-}
-
-.animationHelper {
-  width: 100%;
-  height: 100%;
-  z-index: 20;
-  background-color: transparent;
-  position: absolute;
-  inset: 0;
 }
 
 .loadingAnimation {
