@@ -19,7 +19,8 @@
 }
 
 .titleScreenButton {
-  height: 50px;
+  min-height: 50px !important;
+  max-height: 80px !important;
   animation-name: titleScreenButtonAnimation;
   animation-iteration-count: infinite;
   animation-timing-function: ease-in-out;

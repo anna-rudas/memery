@@ -13,14 +13,6 @@
   padding: calc(var(--padding) * 2);
 }
 
-.button {
-  max-width: var(--btn-width);
-  max-height: var(--btn-height);
-  min-height: 50px;
-  width: 100%;
-  height: 100%;
-}
-
 @media (max-width: 600px) {
   .settingsContent {
     padding: var(--padding) calc(var(--padding) * 2);

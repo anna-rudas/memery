@@ -28,7 +28,7 @@ body,
   --padding: 5px;
   --gap: 3px;
   --btn-width: 230px;
-  --btn-height: 70px;
+  --btn-height: 60px;
   --primary-font: "VT323";
 }
 
@@ -45,5 +45,6 @@ body,
 @media (max-width: 500px) {
   :root {
     --border-radius: 5px;
+    --btn-height: 40px;
   }
 }

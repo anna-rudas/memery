@@ -1,9 +1,9 @@
 .primaryButton {
-  max-width: var(--btn-width);
-  width: 90%;
-  height: 70px;
-  border-width: 6px;
   background-color: var(--btn-bg);
+  max-width: var(--btn-width);
+  min-height: var(--btn-height);
+  max-height: var(--btn-height);
+  width: 100%;
 }
 
 .primaryButton:active {

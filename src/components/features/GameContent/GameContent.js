@@ -14,7 +14,6 @@ function Game() {
     setFirstCardFlip,
     secondCardFlip,
     setSecondCardFlip,
-    isSettingsOpen,
     turnCount,
     setTurnCount,
     cardMatchCount,
@@ -64,11 +63,10 @@ function Game() {
       <div {...className(style.buttonContainer)}>
         <PrimaryButton
           buttonText={"Start new game"}
-          buttonStyle={style.button}
           handleClick={() => setIsSettingsOpen(true)}
         />
       </div>
-      {!isSettingsOpen && <CardsGrid />}
+      <CardsGrid />
       <ProgressBar />
     </div>
   );

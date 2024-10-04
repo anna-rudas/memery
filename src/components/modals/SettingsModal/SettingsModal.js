@@ -49,11 +49,7 @@ function Settings() {
           sizeOrType={selectedPackType}
         />
         <PackPreview pack={previewPack} />
-        <PrimaryButton
-          buttonText={"Play!"}
-          buttonStyle={style.button}
-          handleClick={handleNewGame}
-        />
+        <PrimaryButton buttonText={"Play!"} handleClick={handleNewGame} />
       </div>
     </ModalContainer>
   );
