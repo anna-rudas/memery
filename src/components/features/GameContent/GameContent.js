@@ -55,7 +55,7 @@ function Game() {
   useEffect(() => {
     setTimeout(() => {
       compareCards();
-    }, 700);
+    }, 500);
   }, [secondCardFlip, compareCards]);
 
   return (
