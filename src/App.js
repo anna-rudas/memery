@@ -22,7 +22,7 @@ function App() {
 
   return (
     <div className="wrapper">
-      {isLoading && !isPlaying && <PageLoading />}
+      {isLoading && <PageLoading />}
       {!isLoading && !isPlaying && <TitleScreen />}
       {!isLoading && isPlaying && <GameContent />}
       {isGameOver && <GameOverModal />}

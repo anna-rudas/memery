@@ -1,12 +1,12 @@
 import React from "react";
 import { className } from "../../../utilities/helpers";
 import * as style from "./PageLoading.module.css";
-import * as modals from "../../../assets/styles/modals.module.css";
 import * as textStyles from "../../../assets/styles/text-styles.module.css";
+import ModalContainer from "../../templates/ModalContainer/ModalContainer";
 
 function PageLoading() {
   return (
-    <div {...className(modals.modalCon, style.modalBg)}>
+    <ModalContainer modalContainerStyle={style.modalBg}>
       <div {...className(style.loadingContainer)}>
         <span {...className(textStyles.normalText, style.loadingText)}>
           Loading
@@ -23,7 +23,7 @@ function PageLoading() {
           </span>
         </div>
       </div>
-    </div>
+    </ModalContainer>
   );
 }
 

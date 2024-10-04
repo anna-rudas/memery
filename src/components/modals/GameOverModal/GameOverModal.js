@@ -6,12 +6,18 @@ import * as modals from "../../../assets/styles/modals.module.css";
 import * as textStyles from "../../../assets/styles/text-styles.module.css";
 import PrimaryButton from "../../buttons/PrimaryButton/PrimaryButton";
 import { AppContext } from "../../../context/AppContext";
+import ModalContainer from "../../templates/ModalContainer/ModalContainer";
 
 function GameOver() {
-  const { setIsSettingsOpen } = useContext(AppContext);
+  const { setIsSettingsOpen, setIsGameOver } = useContext(AppContext);
+
+  const handlePlayAgain = () => {
+    setIsSettingsOpen(true);
+    setIsGameOver(false);
+  };
 
   return (
-    <div {...className(modals.modalCon)}>
+    <ModalContainer>
       <div
         {...className(
           style.gameOverCon,
@@ -25,10 +31,10 @@ function GameOver() {
 
         <PrimaryButton
           buttonText={"Play again"}
-          handleClick={() => setIsSettingsOpen(true)}
+          handleClick={handlePlayAgain}
         />
       </div>
-    </div>
+    </ModalContainer>
   );
 }
 

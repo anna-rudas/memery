@@ -9,6 +9,7 @@ import { sizeOptions, typeOptions } from "../../../data/constants";
 import PackPreview from "../../templates/PackPreview";
 import PrimaryButton from "../../buttons/PrimaryButton/PrimaryButton";
 import { AppContext } from "../../../context/AppContext";
+import ModalContainer from "../../templates/ModalContainer/ModalContainer";
 
 function Settings() {
   const { packSize, setPackSize, packType, setPackType, handleNewGame } =
@@ -25,7 +26,7 @@ function Settings() {
   const previewPack = generatePreviewPack(3, packType);
 
   return (
-    <div {...className(modals.modalCon)}>
+    <ModalContainer>
       <div
         {...className(
           style.settingsCon,
@@ -60,7 +61,7 @@ function Settings() {
           />
         </div>
       </div>
-    </div>
+    </ModalContainer>
   );
 }
 
