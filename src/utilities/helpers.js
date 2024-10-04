@@ -35,7 +35,7 @@ export const generatePack = (size, type) => {
   return completeDeck;
 };
 
-export const calcPercentage = (cards, countMatched) => {
+export const calculatePercentage = (cards, countMatched) => {
   if (countMatched !== 0 && cards.length !== 0) {
     return Math.floor((countMatched / (cards.length / 2)) * 100);
   } else {

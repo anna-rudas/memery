@@ -1,13 +1,12 @@
-import React from "react";
+import React, { useContext } from "react";
 import { className } from "../../../utilities/helpers";
 import * as style from "./TitleScreen.module.css";
 import * as textStyles from "../../../assets/styles/text-styles.module.css";
 import PrimaryButton from "../../buttons/PrimaryButton/PrimaryButton";
+import { AppContext } from "../../../context/AppContext";
 
-function TitleScreen({ handleBtnClick }) {
-  const handleTitleScreenButtonClick = () => {
-    handleBtnClick();
-  };
+function TitleScreen() {
+  const { setIsSettingsOpen } = useContext(AppContext);
 
   return (
     <div {...className(style.titleScreen)}>
@@ -19,7 +18,7 @@ function TitleScreen({ handleBtnClick }) {
         <PrimaryButton
           buttonText={"Start"}
           buttonStyle={style.titleScreenButton}
-          handleClick={handleTitleScreenButtonClick}
+          handleClick={() => setIsSettingsOpen(true)}
         />
       </div>
     </div>

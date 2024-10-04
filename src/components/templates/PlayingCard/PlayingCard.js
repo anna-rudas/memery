@@ -1,10 +1,24 @@
-import React from "react";
+import React, { useContext } from "react";
 import * as style from "./PlayingCard.module.css";
 import cover from "../../../assets/images/cover.jpg";
 import { className } from "../../../utilities/helpers";
+import { AppContext } from "../../../context/AppContext";
 
-function Card({ card, disabled, flipCards, flipped }) {
-  const handleClick = () => {
+function Card({ card, disabled, flipped }) {
+  const { firstFlip, setFirstFlip, setSecondFlip } = useContext(AppContext);
+
+  const flipCards = (card) => {
+    if (!firstFlip) {
+      setFirstFlip(card);
+      return;
+    }
+
+    if (card.id !== firstFlip.id) {
+      setSecondFlip(card);
+    }
+  };
+
+  const handlePlayingCardClick = () => {
     if (!disabled) {
       flipCards({ ...card });
     }
@@ -19,7 +33,7 @@ function Card({ card, disabled, flipCards, flipped }) {
       />
       <button
         {...className(style.btn, flipped && style.btnFlipped)}
-        onClick={handleClick}
+        onClick={handlePlayingCardClick}
       >
         <img {...className(style.cardBack)} src={cover} alt="" />
       </button>

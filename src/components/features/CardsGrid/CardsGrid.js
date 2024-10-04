@@ -1,10 +1,13 @@
-import React from "react";
+import React, { useContext } from "react";
 import { className } from "../../../utilities/helpers";
 import * as style from "./CardsGrid.module.css";
 import * as shared from "../../../assets/styles/shared.module.css";
 import PlayingCard from "../../templates/PlayingCard";
+import { AppContext } from "../../../context/AppContext";
 
-function CardGrid({ cards, packSize, flipCards, firstFlip, secondFlip }) {
+function CardGrid() {
+  const { cards, packSize, firstFlip, secondFlip } = useContext(AppContext);
+
   return (
     <div
       {...className(
@@ -19,7 +22,6 @@ function CardGrid({ cards, packSize, flipCards, firstFlip, secondFlip }) {
           <PlayingCard
             key={current.id}
             card={current}
-            flipCards={flipCards}
             flipped={
               current.id === firstFlip?.id ||
               current.id === secondFlip?.id ||

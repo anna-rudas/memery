@@ -1,10 +1,13 @@
-import React, { useState, useEffect } from "react";
-import { className } from "../../../utilities/helpers";
+import React, { useState, useEffect, useContext } from "react";
+import { className, calculatePercentage } from "../../../utilities/helpers";
 import * as style from "./ProgressBar.module.css";
 import * as shared from "../../../assets/styles/shared.module.css";
 import * as textStyles from "../../../assets/styles/text-styles.module.css";
+import { AppContext } from "../../../context/AppContext";
 
-function ProgressBar({ turns, cards, countMatched, calcPercentage }) {
+function ProgressBar() {
+  const { cards, turns, countMatched } = useContext(AppContext);
+
   const [matches, setMatches] = useState(
     window.matchMedia("(min-width: 451px)").matches
   );
@@ -27,11 +30,11 @@ function ProgressBar({ turns, cards, countMatched, calcPercentage }) {
         <div {...className(style.barBorders)}>
           <div
             {...className(style.barBackground)}
-            style={{ width: calcPercentage(cards, countMatched) + "%" }}
+            style={{ width: calculatePercentage(cards, countMatched) + "%" }}
           ></div>
         </div>
         <span {...className(style.percentage, textStyles.normalText)}>
-          {calcPercentage(cards, countMatched)}%
+          {calculatePercentage(cards, countMatched)}%
         </span>
       </div>
     </div>

@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useContext } from "react";
 import { className, generatePreviewPack } from "../../../utilities/helpers";
 import * as style from "./SettingsModal.module.css";
 import * as shared from "../../../assets/styles/shared.module.css";
@@ -8,14 +8,12 @@ import SettingOptions from "../../templates/SettingOptions";
 import { sizeOptions, typeOptions } from "../../../data/constants";
 import PackPreview from "../../templates/PackPreview";
 import PrimaryButton from "../../buttons/PrimaryButton/PrimaryButton";
+import { AppContext } from "../../../context/AppContext";
 
-function Settings({
-  packSize,
-  setPackSize,
-  packType,
-  setPackType,
-  handleNewGame,
-}) {
+function Settings() {
+  const { packSize, setPackSize, packType, setPackType, handleNewGame } =
+    useContext(AppContext);
+
   const setSize = (event) => {
     setPackSize(event.target.value);
   };

@@ -1,35 +1,26 @@
-import React, { useEffect, useCallback } from "react";
-import { className, calcPercentage } from "../../../utilities/helpers";
+import React, { useEffect, useCallback, useContext } from "react";
+import { className } from "../../../utilities/helpers";
 import * as style from "./GameContent.module.css";
 import ProgressBar from "../ProgressBar";
 import CardsGrid from "../CardsGrid";
 import PrimaryButton from "../../buttons/PrimaryButton/PrimaryButton";
+import { AppContext } from "../../../context/AppContext";
 
-function Game({
-  cards,
-  setCards,
-  handleBtnClick,
-  turns,
-  setTurns,
-  firstFlip,
-  setFirstFlip,
-  secondFlip,
-  setSecondFlip,
-  countMatched,
-  setCountMatched,
-  packSize,
-  isSettingsOpen,
-}) {
-  const flipCards = (card) => {
-    if (!firstFlip) {
-      setFirstFlip(card);
-      return;
-    }
-
-    if (card.id !== firstFlip.id) {
-      setSecondFlip(card);
-    }
-  };
+function Game() {
+  const {
+    cards,
+    setCards,
+    firstFlip,
+    setFirstFlip,
+    secondFlip,
+    setSecondFlip,
+    isSettingsOpen,
+    turns,
+    setTurns,
+    countMatched,
+    setCountMatched,
+    setIsSettingsOpen,
+  } = useContext(AppContext);
 
   const resetFlips = useCallback(() => {
     setFirstFlip(null);
@@ -74,24 +65,11 @@ function Game({
         <PrimaryButton
           buttonText={"Start new game"}
           buttonStyle={style.newGameBtn}
-          handleClick={handleBtnClick}
+          handleClick={() => setIsSettingsOpen(true)}
         />
       </div>
-      {!isSettingsOpen && (
-        <CardsGrid
-          cards={cards}
-          packSize={packSize}
-          flipCards={flipCards}
-          firstFlip={firstFlip}
-          secondFlip={secondFlip}
-        />
-      )}
-      <ProgressBar
-        turns={turns}
-        cards={cards}
-        countMatched={countMatched}
-        calcPercentage={calcPercentage}
-      />
+      {!isSettingsOpen && <CardsGrid />}
+      <ProgressBar />
     </div>
   );
 }
