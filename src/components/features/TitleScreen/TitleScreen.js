@@ -19,6 +19,12 @@ function TitleScreen() {
         buttonStyle={style.titleScreenButton}
         handleClick={() => setIsSettingsOpen(true)}
       />
+      <footer {...className(textStyles.buttonTextSmall, style.pageFooter)}>
+        made by
+        <a target="_blank" rel="noreferrer" href="https://annarudas.com/">
+          anna
+        </a>
+      </footer>
     </div>
   );
 }

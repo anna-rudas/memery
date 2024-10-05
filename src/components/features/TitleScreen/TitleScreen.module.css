@@ -44,3 +44,21 @@
     font-size: 2rem;
   }
 }
+
+.pageFooter {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  padding: 5px;
+  z-index: 5;
+  position: fixed;
+  bottom: 0;
+  color: var(--lightest) !important;
+}
+
+.pageFooter a {
+  margin-left: 10px;
+  text-decoration: underline;
+  color: var(--accent);
+}
