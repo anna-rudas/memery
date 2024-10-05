@@ -6,16 +6,10 @@
 }
 
 .baseElement {
-  border-width: 8px;
+  border-width: 6px;
   background-color: var(--base-bg);
 }
 
 .shadow {
   box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
-}
-
-@media (max-width: 450px) {
-  .baseElement {
-    border-width: 6px;
-  }
 }

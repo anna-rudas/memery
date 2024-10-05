@@ -18,9 +18,3 @@
     text-shadow: 2px 2px 2px var(--darkest);
   }
 }
-
-@media (max-width: 450px) {
-  .primaryButton {
-    max-width: 200px;
-  }
-}

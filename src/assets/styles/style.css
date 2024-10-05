@@ -44,7 +44,8 @@ body,
 
 @media (max-width: 500px) {
   :root {
-    --border-radius: 5px;
     --btn-height: 40px;
+    --btn-width: 200px;
+    --border-radius: 5px;
   }
 }

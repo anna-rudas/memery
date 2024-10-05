@@ -49,6 +49,7 @@
 @media (max-width: 450px) {
   .progressBarContainer {
     gap: var(--gap);
+    max-height: 50px;
   }
 
   .turnsCountContainer {

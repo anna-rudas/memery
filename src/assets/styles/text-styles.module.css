@@ -43,7 +43,7 @@
   font-size: 1.8rem;
 }
 
-@media (max-width: 450px) {
+@media (max-width: 500px) {
   .buttonTextSmall {
     font-size: 1.3rem;
   }
