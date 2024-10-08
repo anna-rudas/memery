@@ -6,7 +6,7 @@ import * as modals from "../../../assets/styles/modals.module.css";
 import * as textStyles from "../../../assets/styles/text-styles.module.css";
 import SettingOptions from "../../templates/SettingOptions";
 import { sizeOptions, typeOptions } from "../../../data/constants";
-import PackPreview from "../../templates/PackPreview";
+import PackPreview from "../../features/PackPreview";
 import PrimaryButton from "../../buttons/PrimaryButton/PrimaryButton";
 import { AppContext } from "../../../context/AppContext";
 import ModalContainer from "../../templates/ModalContainer/ModalContainer";
