@@ -22,7 +22,7 @@ function GameOver() {
   }
 
   return (
-    <ModalContainer>
+    <ModalContainer modalWithBackground={false}>
       <div
         {...className(
           style.gameOverContent,
