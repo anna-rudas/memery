@@ -8,21 +8,23 @@
   max-width: 90%;
   padding: var(--padding-sm);
   gap: 5px;
+  grid-template-columns: repeat(var(--columns), minmax(0, 1fr));
+  grid-template-rows: repeat(var(--rows), minmax(0, 1fr));
 }
 
 .mediumGrid {
-  grid-template-columns: repeat(6, minmax(0, 1fr));
-  grid-template-rows: repeat(4, minmax(0, 1fr));
+  --columns: 6;
+  --rows: 4;
 }
 
 .smallGrid {
-  grid-template-columns: repeat(3, minmax(0, 1fr));
-  grid-template-rows: repeat(4, minmax(0, 1fr));
+  --columns: 3;
+  --rows: 4;
 }
 
 .largeGrid {
-  grid-template-columns: repeat(8, minmax(0, 1fr));
-  grid-template-rows: repeat(5, minmax(0, 1fr));
+  --columns: 8;
+  --rows: 5;
 }
 
 @media (max-width: 500px) {
@@ -31,13 +33,13 @@
   }
 
   .mediumGrid {
-    grid-template-columns: repeat(4, minmax(0, 1fr));
-    grid-template-rows: repeat(6, minmax(0, 1fr));
+    --columns: 4;
+    --rows: 6;
   }
 
   .largeGrid {
-    grid-template-columns: repeat(5, minmax(0, 1fr));
-    grid-template-rows: repeat(8, minmax(0, 1fr));
+    --columns: 5;
+    --rows: 8;
   }
 }
 
