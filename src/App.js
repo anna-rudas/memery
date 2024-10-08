@@ -11,30 +11,33 @@ import AppContextProvider, { AppContext } from "./context/AppContext";
 const primaryFontObserver = new FontFaceObserver("VT323");
 
 function App() {
-  const { isLoading, setIsLoading, isPlaying, isGameOverOpen, isSettingsOpen } =
-    useContext(AppContext);
+  const { isLoading, setIsLoading, isPlaying } = useContext(AppContext);
 
   useEffect(() => {
     setTimeout(() => {
       setIsLoading(false);
-    }, 2000);
+    }, 10);
   });
 
+  if (isLoading) {
+    return <PageLoading />;
+  }
+
   return (
-    <div className="wrapper">
-      {isLoading && <PageLoading />}
-      {!isLoading && !isPlaying && !isSettingsOpen && <TitleScreen />}
-      {!isLoading && isPlaying && !isSettingsOpen && <GameContent />}
-      {isGameOverOpen && <GameOverModal />}
-      {isSettingsOpen && <SettingsModal />}
-    </div>
+    <>
+      {isPlaying ? <GameContent /> : <TitleScreen />}
+      <GameOverModal />
+      <SettingsModal />
+    </>
   );
 }
 
 function AppWithProvider() {
   return (
     <AppContextProvider>
-      <App />
+      <div className="wrapper">
+        <App />
+      </div>
     </AppContextProvider>
   );
 }

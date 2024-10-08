@@ -18,9 +18,14 @@ function Settings() {
     selectedPackType,
     setSelectedPackType,
     handleNewGame,
+    isSettingsOpen,
   } = useContext(AppContext);
 
   const previewPack = generatePreviewPack(3, selectedPackType);
+
+  if (!isSettingsOpen) {
+    return null;
+  }
 
   return (
     <ModalContainer>

@@ -9,12 +9,17 @@ import { AppContext } from "../../../context/AppContext";
 import ModalContainer from "../../templates/ModalContainer/ModalContainer";
 
 function GameOver() {
-  const { setIsSettingsOpen, setIsGameOverOpen } = useContext(AppContext);
+  const { setIsSettingsOpen, setIsGameOverOpen, isGameOverOpen } =
+    useContext(AppContext);
 
   const handlePlayAgain = () => {
     setIsSettingsOpen(true);
     setIsGameOverOpen(false);
   };
+
+  if (!isGameOverOpen) {
+    return null;
+  }
 
   return (
     <ModalContainer>
