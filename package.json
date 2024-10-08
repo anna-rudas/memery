@@ -4,7 +4,7 @@
   "description": "",
   "scripts": {
     "format": "prettier --write\"src/**/*.{js,jsx}\"",
-    "lint": "eslint \"src/**/*.{js,jsx}\" --quiet",
+    "lint": "eslint \"src/**/*.{js,jsx}\"",
     "dev": "parcel src/index.html",
     "build": "parcel build src/index.html"
   },
