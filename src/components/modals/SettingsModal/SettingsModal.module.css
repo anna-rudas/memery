@@ -9,13 +9,13 @@
   min-height: 100px;
   max-height: 500px;
   height: 95%;
-  gap: calc(var(--gap) * 3);
-  padding: calc(var(--padding) * 2);
+  gap: var(--gap-lg);
+  padding: var(--padding-md);
 }
 
 @media (max-width: 600px) {
   .settingsContent {
-    padding: var(--padding) calc(var(--padding) * 2);
+    padding: var(--padding-sm) var(--padding-md);
     max-height: 700px;
   }
 }

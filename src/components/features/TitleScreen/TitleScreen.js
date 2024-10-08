@@ -15,7 +15,7 @@ function TitleScreen() {
         <h2 {...className(textStyles.subtitleText)}>A simple memory game</h2>
       </div>
       <PrimaryButton
-        buttonText={"Start"}
+        buttonText="Start"
         buttonStyle={style.titleScreenButton}
         handleClick={() => setIsSettingsOpen(true)}
       />

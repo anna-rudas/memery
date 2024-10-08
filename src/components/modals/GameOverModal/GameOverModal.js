@@ -33,10 +33,7 @@ function GameOver() {
         )}
       >
         <span {...className(textStyles.secondaryTitleText)}>Game over</span>
-        <PrimaryButton
-          buttonText={"Play again"}
-          handleClick={handlePlayAgain}
-        />
+        <PrimaryButton buttonText="Play again" handleClick={handlePlayAgain} />
       </div>
     </ModalContainer>
   );

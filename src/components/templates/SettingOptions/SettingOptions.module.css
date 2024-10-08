@@ -3,7 +3,7 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: calc(var(--gap) * 3);
+  gap: var(--gap-lg);
   height: 30%;
 }
 
@@ -13,7 +13,7 @@
 
 .radioOptionsContainer {
   display: flex;
-  gap: calc(var(--gap) * 2);
+  gap: var(--gap-md);
   align-items: center;
   justify-content: space-between;
   width: 100%;
@@ -50,7 +50,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  padding: var(--padding);
+  padding: var(--padding-sm);
   cursor: pointer;
 }
 
@@ -71,12 +71,12 @@
 
 @media (max-width: 600px) {
   .settingOptionsContainer {
-    gap: var(--gap);
+    gap: var(--gap-sm);
   }
 
   .radioOptionsContainer {
     flex-direction: column;
-    gap: var(--gap);
+    gap: var(--gap-sm);
   }
 
   .radioOptionLabel {

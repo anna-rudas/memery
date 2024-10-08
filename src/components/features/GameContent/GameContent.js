@@ -13,7 +13,7 @@ function Game() {
     <div {...className(style.gameContainer)}>
       <div {...className(style.buttonContainer)}>
         <PrimaryButton
-          buttonText={"Start new game"}
+          buttonText="Start new game"
           handleClick={() => setIsSettingsOpen(true)}
         />
       </div>

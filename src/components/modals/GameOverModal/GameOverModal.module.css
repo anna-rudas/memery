@@ -3,8 +3,8 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  padding: calc(var(--padding) * 4);
-  gap: calc(var(--gap) * 5);
+  padding: var(--padding-lg);
+  gap: var(--gap-xl);
   width: 90%;
   max-width: 300px;
   height: 90%;

@@ -25,8 +25,13 @@ body,
   --border-dark: #2d2c2c;
   --border-radius: 10px;
   --margin: 10px;
-  --padding: 5px;
-  --gap: 3px;
+  --padding-sm: 5px;
+  --padding-md: 10px;
+  --padding-lg: 20px;
+  --gap-sm: 3px;
+  --gap-md: 6px;
+  --gap-lg: 9px;
+  --gap-xl: 15px;
   --btn-width: 230px;
   --btn-height: 60px;
   --primary-font: "VT323";
