@@ -42,8 +42,3 @@ export const calculatePercentage = (cards, cardMatchCount) => {
     return 0;
   }
 };
-
-export const generatePreviewPack = (size, type) => {
-  const pack = [...packs[type]];
-  return pack.slice(0, size);
-};

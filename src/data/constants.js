@@ -1,6 +1,9 @@
 import cryingCatPack from "./packs/CryingCatPack";
 import muscatsPack from "./packs/MusCatsPack";
 import bugsWithNamesPack from "./packs/BugsWithNamesPack";
+import cryingCatPackPreview from "./pack-previews/CryingCatPackPreview";
+import muscatsPackPreview from "./pack-previews/MusCatsPackPreview";
+import bugsWithNamesPackPreview from "./pack-previews/BugsWithNamesPackPreview";
 
 export const sizes = {
   small: 6,
@@ -43,3 +46,9 @@ export const typeOptions = [
     text: "Bugs with names",
   },
 ];
+
+export const packPreviews = {
+  cryingCat: cryingCatPackPreview,
+  muscats: muscatsPackPreview,
+  bugsWithNames: bugsWithNamesPackPreview,
+};

@@ -1,5 +1,5 @@
 import React, { useContext } from "react";
-import { className, generatePreviewPack } from "../../../utilities/helpers";
+import { className } from "../../../utilities/helpers";
 import * as style from "./SettingsModal.module.css";
 import * as shared from "../../../assets/styles/shared.module.css";
 import * as modals from "../../../assets/styles/modals.module.css";
@@ -20,8 +20,6 @@ function Settings() {
     handleNewGame,
     isSettingsOpen,
   } = useContext(AppContext);
-
-  const previewPack = generatePreviewPack(3, selectedPackType);
 
   if (!isSettingsOpen) {
     return null;
@@ -53,7 +51,7 @@ function Settings() {
           name="select-type"
           sizeOrType={selectedPackType}
         />
-        <PackPreview pack={previewPack} />
+        <PackPreview />
         <PrimaryButton buttonText="Play!" handleClick={handleNewGame} />
       </div>
     </ModalContainer>
