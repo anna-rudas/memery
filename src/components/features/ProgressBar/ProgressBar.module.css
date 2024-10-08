@@ -59,4 +59,8 @@
   .progressBarContent {
     width: 50%;
   }
+
+  .progressText {
+    display: none;
+  }
 }

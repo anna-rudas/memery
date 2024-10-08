@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useContext } from "react";
+import React, { useContext, useMemo } from "react";
 import { className, calculatePercentage } from "../../../utilities/helpers";
 import * as style from "./ProgressBar.module.css";
 import * as shared from "../../../assets/styles/shared.module.css";
@@ -8,15 +8,10 @@ import { AppContext } from "../../../context/AppContext";
 function ProgressBar() {
   const { cards, turnCount, cardMatchCount } = useContext(AppContext);
 
-  const [matches, setMatches] = useState(
-    window.matchMedia("(min-width: 451px)").matches
+  const formattedMatchPercentage = useMemo(
+    () => calculatePercentage(cards, cardMatchCount) + "%",
+    [cards, cardMatchCount]
   );
-
-  useEffect(() => {
-    window
-      .matchMedia("(min-width: 451px)")
-      .addEventListener("change", (event) => setMatches(event.matches));
-  }, []);
 
   return (
     <div
@@ -30,19 +25,19 @@ function ProgressBar() {
         Turns: {turnCount}
       </span>
       <div {...className(style.progressBarContent)}>
-        {matches && (
-          <span {...className(textStyles.normalText)}>Progress:</span>
-        )}
+        <span {...className(textStyles.normalText, style.progressText)}>
+          Progress:
+        </span>
         <div {...className(style.progressBarBorders)}>
           <div
             {...className(style.progressBarBackground)}
-            style={{ width: calculatePercentage(cards, cardMatchCount) + "%" }}
+            style={{ width: formattedMatchPercentage }}
           ></div>
         </div>
         <span
           {...className(style.progressBarPercentage, textStyles.normalText)}
         >
-          {calculatePercentage(cards, cardMatchCount)}%
+          {formattedMatchPercentage}
         </span>
       </div>
     </div>
