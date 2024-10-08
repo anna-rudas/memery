@@ -8,20 +8,13 @@ function Card({ card, disabled, flipped }) {
   const { firstCardFlip, setFirstCardFlip, setSecondCardFlip } =
     useContext(AppContext);
 
-  const flipCards = (card) => {
-    if (!firstCardFlip) {
-      setFirstCardFlip(card);
-      return;
-    }
-
-    if (card.id !== firstCardFlip.id) {
-      setSecondCardFlip(card);
-    }
-  };
-
   const handlePlayingCardClick = () => {
     if (!disabled) {
-      flipCards({ ...card });
+      if (!firstCardFlip) {
+        setFirstCardFlip(card);
+      } else if (card.id !== firstCardFlip.id) {
+        setSecondCardFlip(card);
+      }
     }
   };
 

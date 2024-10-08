@@ -1,4 +1,10 @@
-import React, { useState, createContext, useEffect } from "react";
+import React, {
+  useState,
+  createContext,
+  useEffect,
+  useMemo,
+  useCallback,
+} from "react";
 import { generatePack, shuffleCards } from "../utilities/helpers";
 
 const defaultContextValue = {
@@ -22,7 +28,6 @@ const defaultContextValue = {
   turnCount: 0,
   setTurnCount: () => {},
   cardMatchCount: 0,
-  setCardMatchCount: () => {},
   handleNewGame: () => {},
 };
 
@@ -34,19 +39,24 @@ function AppContextProvider({ children }) {
   const [turnCount, setTurnCount] = useState(0);
   const [firstCardFlip, setFirstCardFlip] = useState(null);
   const [secondCardFlip, setSecondCardFlip] = useState(null);
-  const [cardMatchCount, setCardMatchCount] = useState(0);
   const [selectedPackSize, setSelectedPackSize] = useState("medium");
   const [selectedPackType, setSelectedPackType] = useState("cryingCat");
   const [isSettingsOpen, setIsSettingsOpen] = useState(false);
   const [isPlaying, setIsPlaying] = useState(false);
   const [isGameOverOpen, setIsGameOverOpen] = useState(false);
 
+  const cardMatchCount = useMemo(() => {
+    if (cards.length !== 0) {
+      return cards.filter((card) => card.matched).length / 2;
+    }
+    return null;
+  }, [cards]);
+
   const resetGame = () => {
     setTurnCount(0);
     setFirstCardFlip(null);
     setSecondCardFlip(null);
     setIsPlaying(true);
-    setCardMatchCount(0);
     setIsGameOverOpen(false);
   };
 
@@ -59,12 +69,46 @@ function AppContextProvider({ children }) {
   };
 
   useEffect(() => {
-    if (cardMatchCount !== 0 && cardMatchCount === cards.length / 2) {
+    if (cardMatchCount && cardMatchCount === cards.length / 2) {
       setTimeout(() => {
         setIsGameOverOpen(true);
       }, 500);
     }
   }, [cardMatchCount, cards]);
+
+  const compareCards = useCallback(() => {
+    if (!firstCardFlip || !secondCardFlip) {
+      return;
+    }
+    if (firstCardFlip.src === secondCardFlip.src) {
+      const temp = cards.map((currentCard) => {
+        if (currentCard.src === firstCardFlip.src) {
+          return { ...currentCard, matched: true };
+        } else {
+          return currentCard;
+        }
+      });
+      setCards(temp);
+    }
+    setFirstCardFlip(null);
+    setSecondCardFlip(null);
+    setTurnCount(turnCount + 1);
+  }, [
+    cards,
+    setCards,
+    firstCardFlip,
+    setFirstCardFlip,
+    secondCardFlip,
+    setSecondCardFlip,
+    turnCount,
+    setTurnCount,
+  ]);
+
+  useEffect(() => {
+    setTimeout(() => {
+      compareCards();
+    }, 500);
+  }, [secondCardFlip, compareCards]);
 
   return (
     <AppContext.Provider
@@ -89,7 +133,6 @@ function AppContextProvider({ children }) {
         turnCount,
         setTurnCount,
         cardMatchCount,
-        setCardMatchCount,
         handleNewGame,
       }}
     >
