@@ -6,6 +6,14 @@ import React, {
   useCallback,
 } from "react";
 import { generatePack, shuffleCards } from "../utilities/helpers";
+import bugsWithNamesPack from "../data/packs/BugsWithNamesPack";
+import cryingCatPack from "../data/packs/CryingCatPack";
+import muscatsPack from "../data/packs/MusCatsPack";
+import backgroundImage from "../data/BackgroundImage";
+import playingCardCover from "../data/PlayingCardCover";
+import bugsWithNamesPackPreview from "../data/pack-previews/BugsWithNamesPackPreview";
+import cryingCatPackPreview from "../data/pack-previews/CryingCatPackPreview";
+import musCatsPackPreview from "../data/pack-previews/MusCatsPackPreview";
 
 const defaultContextValue = {
   isLoading: true,
@@ -29,6 +37,7 @@ const defaultContextValue = {
   setTurnCount: () => {},
   cardMatchCount: 0,
   handleNewGame: () => {},
+  preloadImageContent: () => {},
 };
 
 export const AppContext = createContext(defaultContextValue);
@@ -51,6 +60,39 @@ function AppContextProvider({ children }) {
     }
     return null;
   }, [cards]);
+
+  const preloadImageContent = () => {
+    const primaryImageContent = [
+      backgroundImage,
+      playingCardCover,
+      ...bugsWithNamesPackPreview,
+      ...cryingCatPackPreview,
+      ...musCatsPackPreview,
+    ];
+
+    // start loading the packs as well
+    const secondaryImageContent = [
+      ...bugsWithNamesPack,
+      ...cryingCatPack,
+      ...muscatsPack,
+    ];
+    secondaryImageContent.forEach((image) => {
+      const imageElement = new Image();
+      imageElement.src = image.src;
+    });
+
+    return Promise.all(
+      primaryImageContent.map(
+        (image) =>
+          new Promise((resolve, reject) => {
+            const imageElement = new Image();
+            imageElement.src = image.src;
+            imageElement.onload = resolve;
+            imageElement.onerror = reject;
+          })
+      )
+    );
+  };
 
   const resetGame = () => {
     setTurnCount(0);
@@ -134,6 +176,7 @@ function AppContextProvider({ children }) {
         setTurnCount,
         cardMatchCount,
         handleNewGame,
+        preloadImageContent,
       }}
     >
       {children}

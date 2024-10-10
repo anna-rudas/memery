@@ -11,13 +11,20 @@ import AppContextProvider, { AppContext } from "./context/AppContext";
 const primaryFontObserver = new FontFaceObserver("VT323");
 
 function App() {
-  const { isLoading, setIsLoading, isPlaying } = useContext(AppContext);
+  const { isLoading, setIsLoading, isPlaying, preloadImageContent } =
+    useContext(AppContext);
 
   useEffect(() => {
-    setTimeout(() => {
-      setIsLoading(false);
-    }, 10);
-  });
+    preloadImageContent()
+      .then(() => {
+        setIsLoading(false);
+      })
+      .catch((error) => {
+        console.error("Failed to preload image content", error);
+        setIsLoading(false);
+      });
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
 
   if (isLoading) {
     return <PageLoading />;
@@ -44,6 +51,6 @@ function AppWithProvider() {
 
 export default AppWithProvider;
 
-Promise.all([primaryFontObserver.load()]).then(() => {
+primaryFontObserver.load().then(() => {
   createRoot(document.getElementById("root")).render(<AppWithProvider />);
 });
