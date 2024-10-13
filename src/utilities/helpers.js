@@ -42,3 +42,11 @@ export const calculatePercentage = (cards, cardMatchCount) => {
     return 0;
   }
 };
+
+export const delay = (ms) => {
+  return new Promise((resolve) => {
+    setTimeout(() => {
+      resolve();
+    }, ms);
+  });
+};

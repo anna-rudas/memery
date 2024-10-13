@@ -5,7 +5,7 @@ import React, {
   useMemo,
   useCallback,
 } from "react";
-import { generatePack, shuffleCards } from "../utilities/helpers";
+import { delay, generatePack, shuffleCards } from "../utilities/helpers";
 import bugsWithNamesPack from "../data/packs/BugsWithNamesPack";
 import cryingCatPack from "../data/packs/CryingCatPack";
 import muscatsPack from "../data/packs/MusCatsPack";
@@ -81,17 +81,16 @@ function AppContextProvider({ children }) {
       imageElement.src = image.src;
     });
 
-    return Promise.all(
-      primaryImageContent.map(
-        (image) =>
-          new Promise((resolve, reject) => {
-            const imageElement = new Image();
-            imageElement.src = image.src;
-            imageElement.onload = resolve;
-            imageElement.onerror = reject;
-          })
-      )
-    );
+    const primaryImageContentResults = primaryImageContent.map((image) => {
+      return new Promise((resolve, reject) => {
+        const imageElement = new Image();
+        imageElement.src = image.src;
+        imageElement.onload = resolve;
+        imageElement.onerror = reject;
+      });
+    });
+
+    return Promise.all([...primaryImageContentResults, delay(500)]);
   };
 
   const resetGame = () => {
