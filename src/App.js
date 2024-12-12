@@ -7,6 +7,12 @@ import SettingsModal from "./components/modals/SettingsModal";
 import FontFaceObserver from "fontfaceobserver";
 import PageLoading from "./components/loaders/PageLoading/PageLoading";
 import AppContextProvider, { AppContext } from "./context/AppContext";
+import * as Sentry from "@sentry/react";
+
+Sentry.init({
+  dsn: "https://dc00c60432acbf79119ff3a38e94f178@o4508161927348224.ingest.de.sentry.io/4508455626014800",
+  integrations: [],
+});
 
 const primaryFontObserver = new FontFaceObserver("VT323");
 
