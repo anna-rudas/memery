@@ -1,38 +1,73 @@
+import adrian from "../../assets/images/bugs-with-names/adrian.jpg";
+import alex from "../../assets/images/bugs-with-names/alex.jpg";
+import anastasia from "../../assets/images/bugs-with-names/anastasia.jpg";
+import billy from "../../assets/images/bugs-with-names/billy.jpg";
+import carlos from "../../assets/images/bugs-with-names/carlos.jpg";
+import charles from "../../assets/images/bugs-with-names/charles.jpg";
+import dennis from "../../assets/images/bugs-with-names/dennis.jpg";
+import edith from "../../assets/images/bugs-with-names/edith.jpg";
+import edward from "../../assets/images/bugs-with-names/edward.jpg";
+import felicia from "../../assets/images/bugs-with-names/felicia.jpg";
+import frank from "../../assets/images/bugs-with-names/frank.jpg";
+import gregory from "../../assets/images/bugs-with-names/gregory.jpg";
+import hailey from "../../assets/images/bugs-with-names/hailey.jpg";
+import hank from "../../assets/images/bugs-with-names/hank.jpg";
+import hector from "../../assets/images/bugs-with-names/hector.jpg";
+import ivan from "../../assets/images/bugs-with-names/ivan.jpg";
+import jesus from "../../assets/images/bugs-with-names/jesus.jpg";
+import joe from "../../assets/images/bugs-with-names/joe.jpg";
+import jordan from "../../assets/images/bugs-with-names/jordan.jpg";
+import juanito from "../../assets/images/bugs-with-names/juanito.jpg";
+import julian from "../../assets/images/bugs-with-names/julian.jpg";
+import lenny from "../../assets/images/bugs-with-names/lenny.jpg";
+import linus from "../../assets/images/bugs-with-names/linus.jpg";
+import martha from "../../assets/images/bugs-with-names/martha.jpg";
+import noah from "../../assets/images/bugs-with-names/noah.jpg";
+import peter from "../../assets/images/bugs-with-names/peter.jpg";
+import primrose from "../../assets/images/bugs-with-names/primrose.jpg";
+import robert from "../../assets/images/bugs-with-names/robert.jpg";
+import sabrina from "../../assets/images/bugs-with-names/sabrina.jpg";
+import sheldon from "../../assets/images/bugs-with-names/sheldon.jpg";
+import stacy from "../../assets/images/bugs-with-names/stacy.jpg";
+import sylvia from "../../assets/images/bugs-with-names/sylvia.jpg";
+import thomas from "../../assets/images/bugs-with-names/thomas.jpg";
+import viktoria from "../../assets/images/bugs-with-names/viktoria.jpg";
+
 const bugsWithNamesPack = [
-  { src: require("../../assets/images/bugs-with-names/adrian.jpg") },
-  { src: require("../../assets/images/bugs-with-names/alex.jpg") },
-  { src: require("../../assets/images/bugs-with-names/anastasia.jpg") },
-  { src: require("../../assets/images/bugs-with-names/billy.jpg") },
-  { src: require("../../assets/images/bugs-with-names/carlos.jpg") },
-  { src: require("../../assets/images/bugs-with-names/charles.jpg") },
-  { src: require("../../assets/images/bugs-with-names/dennis.jpg") },
-  { src: require("../../assets/images/bugs-with-names/edith.jpg") },
-  { src: require("../../assets/images/bugs-with-names/edward.jpg") },
-  { src: require("../../assets/images/bugs-with-names/felicia.jpg") },
-  { src: require("../../assets/images/bugs-with-names/frank.jpg") },
-  { src: require("../../assets/images/bugs-with-names/gregory.jpg") },
-  { src: require("../../assets/images/bugs-with-names/hailey.jpg") },
-  { src: require("../../assets/images/bugs-with-names/hank.jpg") },
-  { src: require("../../assets/images/bugs-with-names/hector.jpg") },
-  { src: require("../../assets/images/bugs-with-names/ivan.jpg") },
-  { src: require("../../assets/images/bugs-with-names/jesus.jpg") },
-  { src: require("../../assets/images/bugs-with-names/joe.jpg") },
-  { src: require("../../assets/images/bugs-with-names/jordan.jpg") },
-  { src: require("../../assets/images/bugs-with-names/juanito.jpg") },
-  { src: require("../../assets/images/bugs-with-names/julian.jpg") },
-  { src: require("../../assets/images/bugs-with-names/lenny.jpg") },
-  { src: require("../../assets/images/bugs-with-names/linus.jpg") },
-  { src: require("../../assets/images/bugs-with-names/martha.jpg") },
-  { src: require("../../assets/images/bugs-with-names/noah.jpg") },
-  { src: require("../../assets/images/bugs-with-names/peter.jpg") },
-  { src: require("../../assets/images/bugs-with-names/primrose.jpg") },
-  { src: require("../../assets/images/bugs-with-names/robert.jpg") },
-  { src: require("../../assets/images/bugs-with-names/sabrina.jpg") },
-  { src: require("../../assets/images/bugs-with-names/sheldon.jpg") },
-  { src: require("../../assets/images/bugs-with-names/stacy.jpg") },
-  { src: require("../../assets/images/bugs-with-names/sylvia.jpg") },
-  { src: require("../../assets/images/bugs-with-names/thomas.jpg") },
-  { src: require("../../assets/images/bugs-with-names/viktoria.jpg") },
+  { src: adrian },
+  { src: alex },
+  { src: anastasia },
+  { src: billy },
+  { src: carlos },
+  { src: charles },
+  { src: dennis },
+  { src: edith },
+  { src: edward },
+  { src: felicia },
+  { src: frank },
+  { src: gregory },
+  { src: hailey },
+  { src: hank },
+  { src: hector },
+  { src: ivan },
+  { src: jesus },
+  { src: joe },
+  { src: jordan },
+  { src: juanito },
+  { src: julian },
+  { src: lenny },
+  { src: linus },
+  { src: martha },
+  { src: noah },
+  { src: peter },
+  { src: primrose },
+  { src: robert },
+  { src: sabrina },
+  { src: sheldon },
+  { src: stacy },
+  { src: sylvia },
+  { src: thomas },
+  { src: viktoria },
 ];
 
 export default bugsWithNamesPack;

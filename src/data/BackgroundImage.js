@@ -1,3 +1,5 @@
-const backgroundImage = { src: require("../assets/images/background.jpg") };
+import background from "../assets/images/background.jpg";
+
+const backgroundImage = { src: background };
 
 export default backgroundImage;

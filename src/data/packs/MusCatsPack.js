@@ -1,32 +1,61 @@
+import banana from "../../assets/images/muscats/banana.jpg";
+import cherrySiblings from "../../assets/images/muscats/cherry_siblings.jpg";
+import dice from "../../assets/images/muscats/dice.jpg";
+import dumpling from "../../assets/images/muscats/dumpling.jpg";
+import egg from "../../assets/images/muscats/egg.jpg";
+import fishbowl from "../../assets/images/muscats/fishbowl.jpg";
+import flowers from "../../assets/images/muscats/flowers.jpg";
+import grilledCheese from "../../assets/images/muscats/grilled_cheese.jpg";
+import happyMeal from "../../assets/images/muscats/happy_meal.jpg";
+import iceCream from "../../assets/images/muscats/ice_cream.jpg";
+import icedLatte from "../../assets/images/muscats/iced_latte.jpg";
+import leaf from "../../assets/images/muscats/leaf.jpg";
+import lemon from "../../assets/images/muscats/lemon.jpg";
+import lightbulb from "../../assets/images/muscats/lightbulb.jpg";
+import mangoSiblings from "../../assets/images/muscats/mango_siblings.jpg";
+import moon from "../../assets/images/muscats/moon.jpg";
+import pasta from "../../assets/images/muscats/pasta.jpg";
+import pickle from "../../assets/images/muscats/pickle.jpg";
+import pistachio from "../../assets/images/muscats/pistachio.jpg";
+import playdoh from "../../assets/images/muscats/playdoh.jpg";
+import prozac from "../../assets/images/muscats/prozac.jpg";
+import remi from "../../assets/images/muscats/remi.jpg";
+import snail from "../../assets/images/muscats/snail.jpg";
+import squidgame from "../../assets/images/muscats/squidgame.jpg";
+import strawberry from "../../assets/images/muscats/strawberry.jpg";
+import sun from "../../assets/images/muscats/sun.jpg";
+import thumbsUp from "../../assets/images/muscats/thumbs_up.jpg";
+import tofu from "../../assets/images/muscats/tofu.jpg";
+
 const muscatsPack = [
-  { src: require("../../assets/images/muscats/banana.jpg") },
-  { src: require("../../assets/images/muscats/cherry_siblings.jpg") },
-  { src: require("../../assets/images/muscats/dice.jpg") },
-  { src: require("../../assets/images/muscats/dumpling.jpg") },
-  { src: require("../../assets/images/muscats/egg.jpg") },
-  { src: require("../../assets/images/muscats/fishbowl.jpg") },
-  { src: require("../../assets/images/muscats/flowers.jpg") },
-  { src: require("../../assets/images/muscats/grilled_cheese.jpg") },
-  { src: require("../../assets/images/muscats/happy_meal.jpg") },
-  { src: require("../../assets/images/muscats/ice_cream.jpg") },
-  { src: require("../../assets/images/muscats/iced_latte.jpg") },
-  { src: require("../../assets/images/muscats/leaf.jpg") },
-  { src: require("../../assets/images/muscats/lemon.jpg") },
-  { src: require("../../assets/images/muscats/lightbulb.jpg") },
-  { src: require("../../assets/images/muscats/mango_siblings.jpg") },
-  { src: require("../../assets/images/muscats/moon.jpg") },
-  { src: require("../../assets/images/muscats/pasta.jpg") },
-  { src: require("../../assets/images/muscats/pickle.jpg") },
-  { src: require("../../assets/images/muscats/pistachio.jpg") },
-  { src: require("../../assets/images/muscats/playdoh.jpg") },
-  { src: require("../../assets/images/muscats/prozac.jpg") },
-  { src: require("../../assets/images/muscats/remi.jpg") },
-  { src: require("../../assets/images/muscats/snail.jpg") },
-  { src: require("../../assets/images/muscats/squidgame.jpg") },
-  { src: require("../../assets/images/muscats/strawberry.jpg") },
-  { src: require("../../assets/images/muscats/sun.jpg") },
-  { src: require("../../assets/images/muscats/thumbs_up.jpg") },
-  { src: require("../../assets/images/muscats/tofu.jpg") },
+  { src: banana },
+  { src: cherrySiblings },
+  { src: dice },
+  { src: dumpling },
+  { src: egg },
+  { src: fishbowl },
+  { src: flowers },
+  { src: grilledCheese },
+  { src: happyMeal },
+  { src: iceCream },
+  { src: icedLatte },
+  { src: leaf },
+  { src: lemon },
+  { src: lightbulb },
+  { src: mangoSiblings },
+  { src: moon },
+  { src: pasta },
+  { src: pickle },
+  { src: pistachio },
+  { src: playdoh },
+  { src: prozac },
+  { src: remi },
+  { src: snail },
+  { src: squidgame },
+  { src: strawberry },
+  { src: sun },
+  { src: thumbsUp },
+  { src: tofu },
 ];
 
 export default muscatsPack;

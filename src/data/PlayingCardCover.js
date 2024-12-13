@@ -1,3 +1,5 @@
-const playingCardCover = { src: require("../assets/images/cover.jpg") };
+import cover from "../assets/images/cover.jpg";
+
+const playingCardCover = { src: cover };
 
 export default playingCardCover;

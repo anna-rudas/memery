@@ -1,37 +1,59 @@
+import acceptance from "../../assets/images/crying-cat-pack/acceptance.jpg";
+import birthday1 from "../../assets/images/crying-cat-pack/birthday1.jpg";
+import birthday2 from "../../assets/images/crying-cat-pack/birthday2.jpg";
+import classic from "../../assets/images/crying-cat-pack/classic.jpg";
+import cowboy from "../../assets/images/crying-cat-pack/cowboy.jpg";
+import desperation from "../../assets/images/crying-cat-pack/desperation.jpg";
+import fearOfPublicSpeaking1 from "../../assets/images/crying-cat-pack/fear_of_public_speaking1.jpg";
+import fearOfPublicSpeaking2 from "../../assets/images/crying-cat-pack/fear_of_public_speaking2.jpg";
+import fear from "../../assets/images/crying-cat-pack/fear.jpg";
+import flower from "../../assets/images/crying-cat-pack/flower.jpg";
+import freak from "../../assets/images/crying-cat-pack/freak.jpg";
+import hello from "../../assets/images/crying-cat-pack/hello.jpg";
+import howCouldYou from "../../assets/images/crying-cat-pack/how_could_you.jpg";
+import hunger from "../../assets/images/crying-cat-pack/hunger.jpg";
+import inBed from "../../assets/images/crying-cat-pack/in_bed.jpg";
+import multilingualQueen from "../../assets/images/crying-cat-pack/multilingual_queen.jpg";
+import noTexts from "../../assets/images/crying-cat-pack/no_texts.jpg";
+import origins from "../../assets/images/crying-cat-pack/origins.jpg";
+import pathetic from "../../assets/images/crying-cat-pack/pathetic.jpg";
+import princess from "../../assets/images/crying-cat-pack/princess.jpg";
+import pringled1 from "../../assets/images/crying-cat-pack/pringled1.jpg";
+import pringled2 from "../../assets/images/crying-cat-pack/pringled2.jpg";
+import sadness from "../../assets/images/crying-cat-pack/sadness.jpg";
+import selfReflection1 from "../../assets/images/crying-cat-pack/self_reflection1.jpg";
+import selfReflection2 from "../../assets/images/crying-cat-pack/self_reflection2.jpg";
+import small from "../../assets/images/crying-cat-pack/small.jpg";
+import yea from "../../assets/images/crying-cat-pack/yea.jpg";
+
 const cryingCatPack = [
-  { src: require("../../assets/images/crying-cat-pack/acceptance.jpg") },
-  { src: require("../../assets/images/crying-cat-pack/birthday1.jpg") },
-  { src: require("../../assets/images/crying-cat-pack/birthday2.jpg") },
-  { src: require("../../assets/images/crying-cat-pack/classic.jpg") },
-  { src: require("../../assets/images/crying-cat-pack/cowboy.jpg") },
-  { src: require("../../assets/images/crying-cat-pack/desperation.jpg") },
-  {
-    src: require("../../assets/images/crying-cat-pack/fear_of_public_speaking1.jpg"),
-  },
-  {
-    src: require("../../assets/images/crying-cat-pack/fear_of_public_speaking2.jpg"),
-  },
-  { src: require("../../assets/images/crying-cat-pack/fear.jpg") },
-  { src: require("../../assets/images/crying-cat-pack/flower.jpg") },
-  { src: require("../../assets/images/crying-cat-pack/freak.jpg") },
-  { src: require("../../assets/images/crying-cat-pack/hello.jpg") },
-  { src: require("../../assets/images/crying-cat-pack/how_could_you.jpg") },
-  { src: require("../../assets/images/crying-cat-pack/hunger.jpg") },
-  { src: require("../../assets/images/crying-cat-pack/in_bed.jpg") },
-  {
-    src: require("../../assets/images/crying-cat-pack/multilingual_queen.jpg"),
-  },
-  { src: require("../../assets/images/crying-cat-pack/no_texts.jpg") },
-  { src: require("../../assets/images/crying-cat-pack/origins.jpg") },
-  { src: require("../../assets/images/crying-cat-pack/pathetic.jpg") },
-  { src: require("../../assets/images/crying-cat-pack/princess.jpg") },
-  { src: require("../../assets/images/crying-cat-pack/pringled1.jpg") },
-  { src: require("../../assets/images/crying-cat-pack/pringled2.jpg") },
-  { src: require("../../assets/images/crying-cat-pack/sadness.jpg") },
-  { src: require("../../assets/images/crying-cat-pack/self_reflection1.jpg") },
-  { src: require("../../assets/images/crying-cat-pack/self_reflection2.jpg") },
-  { src: require("../../assets/images/crying-cat-pack/small.jpg") },
-  { src: require("../../assets/images/crying-cat-pack/yea.jpg") },
+  { src: acceptance },
+  { src: birthday1 },
+  { src: birthday2 },
+  { src: classic },
+  { src: cowboy },
+  { src: desperation },
+  { src: fearOfPublicSpeaking1 },
+  { src: fearOfPublicSpeaking2 },
+  { src: fear },
+  { src: flower },
+  { src: freak },
+  { src: hello },
+  { src: howCouldYou },
+  { src: hunger },
+  { src: inBed },
+  { src: multilingualQueen },
+  { src: noTexts },
+  { src: origins },
+  { src: pathetic },
+  { src: princess },
+  { src: pringled1 },
+  { src: pringled2 },
+  { src: sadness },
+  { src: selfReflection1 },
+  { src: selfReflection2 },
+  { src: small },
+  { src: yea },
 ];
 
 export default cryingCatPack;
