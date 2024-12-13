@@ -9,7 +9,7 @@ function ProgressBar() {
   const { cards, turnCount, cardMatchCount } = useContext(AppContext);
 
   const formattedMatchPercentage = useMemo(
-    () => calculatePercentage(cards, cardMatchCount) + "%",
+    () => calculatePercentage(cards.length / 2, cardMatchCount) + "%",
     [cards, cardMatchCount]
   );
 
