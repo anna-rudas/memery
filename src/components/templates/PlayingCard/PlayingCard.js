@@ -4,7 +4,7 @@ import cover from "../../../assets/images/cover.jpg";
 import { className } from "../../../utilities/helpers";
 import { AppContext } from "../../../context/AppContext";
 
-function Card({ card, disabled, flipped }) {
+function PlayingCard({ card, disabled, flipped }) {
   const { firstCardFlip, setFirstCardFlip, setSecondCardFlip } =
     useContext(AppContext);
 
@@ -19,7 +19,10 @@ function Card({ card, disabled, flipped }) {
   };
 
   return (
-    <div {...className(style.playingCard, flipped && style.cardFlipped)}>
+    <div
+      data-testid="playingCard"
+      {...className(style.playingCard, flipped && style.cardFlipped)}
+    >
       <img
         {...className(style.cardFace, card.matched && style.matchedEffect)}
         src={card.src}
@@ -35,4 +38,4 @@ function Card({ card, disabled, flipped }) {
   );
 }
 
-export default Card;
+export default PlayingCard;

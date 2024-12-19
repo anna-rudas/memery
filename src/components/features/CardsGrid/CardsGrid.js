@@ -5,9 +5,13 @@ import * as shared from "../../../assets/styles/shared.module.css";
 import PlayingCard from "../../templates/PlayingCard";
 import { AppContext } from "../../../context/AppContext";
 
-function CardGrid() {
+function CardsGrid() {
   const { cards, selectedPackSize, firstCardFlip, secondCardFlip } =
     useContext(AppContext);
+
+  if (cards.length === 0) {
+    return null;
+  }
 
   return (
     <div
@@ -36,4 +40,4 @@ function CardGrid() {
   );
 }
 
-export default CardGrid;
+export default CardsGrid;
