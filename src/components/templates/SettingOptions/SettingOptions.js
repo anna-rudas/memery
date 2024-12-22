@@ -26,6 +26,7 @@ function Options({
                 name={name}
                 value={current.value}
                 defaultChecked={current.value === sizeOrType}
+                aria-label={`${name}-${current.value}`}
               />
               <span
                 {...className(
