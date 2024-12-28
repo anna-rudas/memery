@@ -4,7 +4,7 @@ export default {
   },
   moduleNameMapper: {
     "\\.(jpg|jpeg|png|gif|svg)$": "<rootDir>/__mocks__/fileMock.js",
-    "^.+\\.(css)$": "<rootDir>/__mocks__/styleMock.js",
+    "\\.(css|less|sass|scss)$": "<rootDir>/__mocks__/styleMock.js",
   },
   testEnvironment: "jsdom",
 };

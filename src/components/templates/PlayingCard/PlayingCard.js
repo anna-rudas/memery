@@ -24,6 +24,7 @@ function PlayingCard({ card, disabled, flipped }) {
       {...className(style.playingCard, flipped && style.cardFlipped)}
     >
       <img
+        data-testid={card.matched ? "matchedCard" : "unmatchedCard"}
         {...className(style.cardFace, card.matched && style.matchedEffect)}
         src={card.src}
         alt=""
