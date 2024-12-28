@@ -42,15 +42,25 @@ const defaultContextValue = {
 
 export const AppContext = createContext(defaultContextValue);
 
-function AppContextProvider({ children }) {
+function AppContextProvider({ children, value = {} }) {
   const [isLoading, setIsLoading] = useState(true);
-  const [cards, setCards] = useState([]);
-  const [turnCount, setTurnCount] = useState(0);
-  const [firstCardFlip, setFirstCardFlip] = useState(null);
-  const [secondCardFlip, setSecondCardFlip] = useState(null);
-  const [selectedPackSize, setSelectedPackSize] = useState("medium");
-  const [selectedPackType, setSelectedPackType] = useState("cryingCat");
-  const [isSettingsOpen, setIsSettingsOpen] = useState(false);
+  const [cards, setCards] = useState(value.cards || []);
+  const [turnCount, setTurnCount] = useState(value.turnCount || 0);
+  const [firstCardFlip, setFirstCardFlip] = useState(
+    value.firstCardFlip || null
+  );
+  const [secondCardFlip, setSecondCardFlip] = useState(
+    value.secondCardFlip || null
+  );
+  const [selectedPackSize, setSelectedPackSize] = useState(
+    value.selectedPackSize || "medium"
+  );
+  const [selectedPackType, setSelectedPackType] = useState(
+    value.selectedPackType || "cryingCat"
+  );
+  const [isSettingsOpen, setIsSettingsOpen] = useState(
+    value.isSettingsOpen || false
+  );
   const [isPlaying, setIsPlaying] = useState(false);
   const [isGameOverOpen, setIsGameOverOpen] = useState(false);
 
