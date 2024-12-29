@@ -8,6 +8,8 @@ import {
 } from "@testing-library/react";
 import CardsGrid from "../src/components/features/CardsGrid/CardsGrid";
 import AppContextProvider from "../src/context/AppContext";
+import "@testing-library/jest-dom";
+import GameOverModal from "../src/components/modals/GameOverModal";
 
 describe(CardsGrid, () => {
   test("displays correct number of playing cards in a grid", () => {
@@ -123,6 +125,50 @@ describe(CardsGrid, () => {
         ).toBe(false);
       },
       { timeout: 1000 }
+    );
+  });
+  test("handles game over correctly", async () => {
+    const mockCards = [
+      {
+        id: "1",
+        src: "image-X.jpg",
+        matched: false,
+      },
+      {
+        id: "2",
+        src: "image-X.jpg",
+        matched: false,
+      },
+    ];
+
+    const { getAllByTestId, getByTestId } = render(
+      <AppContextProvider
+        value={{
+          cards: mockCards,
+          firstCardFlip: null,
+          secondCardFlip: null,
+          isGameOverOpen: false,
+        }}
+      >
+        <CardsGrid />
+        <GameOverModal />
+      </AppContextProvider>
+    );
+
+    const playingCards = getAllByTestId("playingCard");
+
+    const firstPlayingCardButton = within(playingCards[0]).getByRole("button");
+    await act(() => fireEvent.click(firstPlayingCardButton));
+
+    const secondPlayingCardButton = within(playingCards[1]).getByRole("button");
+    await act(() => fireEvent.click(secondPlayingCardButton));
+
+    await waitFor(
+      async () => {
+        const gameOverModal = getByTestId("gameOverModal");
+        expect(gameOverModal).toBeInTheDocument();
+      },
+      { timeout: 2000 }
     );
   });
 });

@@ -62,7 +62,9 @@ function AppContextProvider({ children, value = {} }) {
     value.isSettingsOpen || false
   );
   const [isPlaying, setIsPlaying] = useState(false);
-  const [isGameOverOpen, setIsGameOverOpen] = useState(false);
+  const [isGameOverOpen, setIsGameOverOpen] = useState(
+    value.isGameOverOpen || false
+  );
 
   const cardMatchCount = useMemo(() => {
     if (cards.length !== 0) {
@@ -104,6 +106,7 @@ function AppContextProvider({ children, value = {} }) {
   };
 
   const resetGame = () => {
+    console.log("resetting");
     setTurnCount(0);
     setFirstCardFlip(null);
     setSecondCardFlip(null);
@@ -120,7 +123,9 @@ function AppContextProvider({ children, value = {} }) {
   };
 
   useEffect(() => {
+    console.log("here!", cardMatchCount, cards.length);
     if (cardMatchCount && cardMatchCount === cards.length / 2) {
+      console.log("setting it true!");
       setTimeout(() => {
         setIsGameOverOpen(true);
       }, 500);
