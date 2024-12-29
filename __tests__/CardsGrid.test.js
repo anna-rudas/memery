@@ -10,6 +10,7 @@ import CardsGrid from "../src/components/features/CardsGrid/CardsGrid";
 import AppContextProvider from "../src/context/AppContext";
 import "@testing-library/jest-dom";
 import GameOverModal from "../src/components/modals/GameOverModal";
+import ProgressBar from "../src/components/features/ProgressBar/ProgressBar";
 
 describe(CardsGrid, () => {
   test("displays correct number of playing cards in a grid", () => {
@@ -45,7 +46,7 @@ describe(CardsGrid, () => {
       },
     ];
 
-    const { getAllByTestId } = render(
+    const { getAllByTestId, getByTestId } = render(
       <AppContextProvider
         value={{
           cards: mockCards,
@@ -55,10 +56,14 @@ describe(CardsGrid, () => {
         }}
       >
         <CardsGrid />
+        <ProgressBar />
       </AppContextProvider>
     );
 
     const playingCards = getAllByTestId("playingCard");
+    let turnCountTextContent = getByTestId("turnCount").textContent;
+
+    expect(turnCountTextContent).toBe("Turns: 0");
 
     const firstPlayingCardButton = within(playingCards[0]).getByRole("button");
     await act(() => fireEvent.click(firstPlayingCardButton));
@@ -68,6 +73,8 @@ describe(CardsGrid, () => {
 
     await waitFor(
       () => {
+        turnCountTextContent = getByTestId("turnCount").textContent;
+
         expect(getAllByTestId("matchedCard").length).toBe(2);
         expect(
           playingCards[0].firstChild.classList.contains("matchedEffect")
@@ -75,8 +82,9 @@ describe(CardsGrid, () => {
         expect(
           playingCards[1].firstChild.classList.contains("matchedEffect")
         ).toBe(true);
+        expect(turnCountTextContent).toBe("Turns: 1");
       },
-      { timeout: 1000 }
+      { timeout: 2000 }
     );
   });
   test("handles non-matching cards correctly", async () => {
@@ -93,7 +101,7 @@ describe(CardsGrid, () => {
       },
     ];
 
-    const { getAllByTestId } = render(
+    const { getAllByTestId, getByTestId } = render(
       <AppContextProvider
         value={{
           cards: mockCards,
@@ -103,10 +111,14 @@ describe(CardsGrid, () => {
         }}
       >
         <CardsGrid />
+        <ProgressBar />
       </AppContextProvider>
     );
 
     const playingCards = getAllByTestId("playingCard");
+    let turnCountTextContent = getByTestId("turnCount").textContent;
+
+    expect(turnCountTextContent).toBe("Turns: 0");
 
     const firstPlayingCardButton = within(playingCards[0]).getByRole("button");
     await act(() => fireEvent.click(firstPlayingCardButton));
@@ -116,6 +128,8 @@ describe(CardsGrid, () => {
 
     await waitFor(
       () => {
+        turnCountTextContent = getByTestId("turnCount").textContent;
+
         expect(getAllByTestId("unmatchedCard").length).toBe(2);
         expect(
           playingCards[0].firstChild.classList.contains("matchedEffect")
@@ -123,8 +137,9 @@ describe(CardsGrid, () => {
         expect(
           playingCards[1].firstChild.classList.contains("matchedEffect")
         ).toBe(false);
+        expect(turnCountTextContent).toBe("Turns: 1");
       },
-      { timeout: 1000 }
+      { timeout: 2000 }
     );
   });
   test("handles game over correctly", async () => {

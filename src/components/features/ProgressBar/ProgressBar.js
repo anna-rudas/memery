@@ -21,7 +21,10 @@ function ProgressBar() {
         shared.baseElement
       )}
     >
-      <span {...className(style.turnsCountContainer, textStyles.normalText)}>
+      <span
+        data-testid="turnCount"
+        {...className(style.turnsCountContainer, textStyles.normalText)}
+      >
         Turns: {turnCount}
       </span>
       <div {...className(style.progressBarContent)}>
