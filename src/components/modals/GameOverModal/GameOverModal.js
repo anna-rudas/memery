@@ -13,7 +13,6 @@ function GameOver() {
     useContext(AppContext);
 
   const handlePlayAgain = () => {
-    console.log("play again");
     setIsSettingsOpen(true);
     setIsGameOverOpen(false);
   };

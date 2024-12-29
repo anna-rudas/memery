@@ -106,7 +106,6 @@ function AppContextProvider({ children, value = {} }) {
   };
 
   const resetGame = () => {
-    console.log("resetting");
     setTurnCount(0);
     setFirstCardFlip(null);
     setSecondCardFlip(null);
@@ -123,9 +122,7 @@ function AppContextProvider({ children, value = {} }) {
   };
 
   useEffect(() => {
-    console.log("here!", cardMatchCount, cards.length);
     if (cardMatchCount && cardMatchCount === cards.length / 2) {
-      console.log("setting it true!");
       setTimeout(() => {
         setIsGameOverOpen(true);
       }, 500);
